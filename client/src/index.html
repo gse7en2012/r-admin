@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" ng-app="RDash">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+
+    <title>Seven后台</title>
+    <!-- STYLES -->
+    <!-- build:css lib/css/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+    <link rel="stylesheet" type="text/css" href="components/mystyle.css">
+    <!-- endbuild -->
+    <!-- SCRIPTS -->
+    <!-- build:js lib/js/main.min.js -->
+    <script type="text/javascript" src="components/zepto/index.js"></script>
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="components/ueditor/angular-ueditor.min.js"></script>
+    <script type="text/javascript" src="components/ng-flow/ng-flow.js"></script>
+    <script type="text/javascript" src="components/moment/moment.min.js"></script>
+    <!-- endbuild -->
+    <!-- Custom Scripts -->
+
+    <link rel="stylesheet" href="themes/default/css/umeditor.min.css" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/umeditor.config.js"></script>
+    <script type="text/javascript" src="js/umeditor.js"></script>
+    <script type="text/javascript" src="lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" src="js/dashboard.min.js"></script>
+</head>
+<body ng-controller="MasterCtrl">
+<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar">
+            <li class="sidebar-main">
+                <a ng-click="toggleSidebar()">
+                    管理后台
+                    <span class="menu-icon glyphicon glyphicon-transfer"></span>
+                </a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/news" ng-click="setNavName($event)" class="cur">新闻管理<span class="menu-icon fa fa-list"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/activity" ng-click="setNavName($event)">活动管理<span class="menu-icon fa fa-image"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/strategy" ng-click="setNavName($event)">攻略管理 <span class="menu-icon fa fa-file-word-o"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/links" ng-click="setNavName($event)">友链管理 <span class="menu-icon fa fa-link"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/logs" ng-click="setNavName($event)">日志管理 <span class="menu-icon fa fa-file-text-o"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/users" ng-click="setNavName($event)">用户管理 <span class="menu-icon fa fa-users"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/tables" ng-click="setNavName($event)">Tables <span class="menu-icon fa fa-table"></span></a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <p style="line-height: 40px;color: #b2bfdc">版本号:v1.0.0</p>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div id="content-wrapper">
+        <div class="page-content">
+
+            <!-- Header Bar -->
+            <div class="row header">
+                <div class="col-xs-12">
+                    <div class="user pull-right">
+                        <div class="item dropdown" uib-dropdown>
+                            <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                                <img src="img/avatar.jpg">gseven
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-header">
+                                    {{name}}
+                                </li>
+                                <li class="divider"></li>
+                                <li class="link">
+                                    <a href="#">
+                                        修改密码
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="link">
+                                    <a href="/auth/logout">
+                                        退出登录
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <div class="page">
+                            {{navName}}
+                        </div>
+                        <div class="breadcrumb-links">
+                            后台管理 / {{navName}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Bar -->
+
+            <!-- Main Content -->
+            <div ui-view></div>
+
+        </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+</div><!-- End Page Wrapper -->
+</body>
+</html>

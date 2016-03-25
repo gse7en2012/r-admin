@@ -1,0 +1,60 @@
+<div ng-controller="LinksAddCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="title" class="col-sm-1 control-label">链接名称</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="title" placeholder="链接名称" ng-model="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-1 control-label">链接地址</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="date" placeholder="链接地址" ng-model="link">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-1 control-label">展示顺序</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="数字大者靠前" ng-model="sort">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="author" class="col-sm-1 control-label">作者</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="author" placeholder="作者" ng-model="author">
+                    </div>
+                </div>
+                <div flow-init="{target: '/upload/links',testChunks:false}"
+                     flow-files-submitted="$flow.upload()"
+                     flow-file-success="uploadSuccess($message)">
+                    <div class="form-group">
+                        <label for="date" class="col-sm-1 control-label">缩略图</label>
+
+                        <div class="col-sm-9">
+                            <span class="btn btn-default btn-sm" flow-btn><i class="fa fa-image"></i>选择图片</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10">
+                            <img src="http://www.placehold.it/120x45/DDDDDD/AAAAAA&amp;text=120x45"
+                                 ng-show="!$flow.files.length" width="120" height="45"/>
+                            <img flow-img="$flow.files[0]" ng-show="$flow.files.length" width="120" height="45"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <button ng-click="add()" class="btn btn-primary"><i class="fa fa-send-o"></i> 发布</button>
+                        <a class="btn btn-default" href='/#/links'><i class="fa fa-close"></i> 返回</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
