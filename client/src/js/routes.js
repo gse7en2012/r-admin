@@ -47,6 +47,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url:'/links',
                 templateUrl: 'templates/links/linkList.html'
             })
+            .state('linkEdit',{
+                url:'/links/edit/:link_id',
+                templateUrl: 'templates/links/linkEdit.html'
+            })
             .state('linkAdd',{
                 url:'/links/add',
                 templateUrl: 'templates/links/linkAdd.html'

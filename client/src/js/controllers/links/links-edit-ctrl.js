@@ -9,10 +9,11 @@ function LinksEditCtrl($scope, $cookieStore,$stateParams, linksApiService) {
     const linkId=$stateParams.link_id;
 
     linksApiService.getLinksDetails(linkId).then((data)=>{
-        $scope.content=data.result.content;
-        $scope.title=data.result.title;
+        $scope.img=data.result.link_img;
+        $scope.name=data.result.link_name;
         $scope.author=data.result.author;
-        $scope.date=moment(data.result.date).format('YYYY-MM-DD');
+        $scope.link=data.result.link_address;
+        $scope.sort=data.result.sort;
     });
 
     $scope.uploadSuccess=function(msg){
@@ -21,12 +22,13 @@ function LinksEditCtrl($scope, $cookieStore,$stateParams, linksApiService) {
 
 
     $scope.edit=()=>{
-        newsApiService.editNews({
-            title:$scope.title,
+        linksApiService.editNews({
+            img:$scope.img,
             author:$scope.author,
-            uid:1,
-            date:new Date(),
-            content:$scope.content
+            name:$scope.name,
+            link:$scope.link,
+            sort:$scope.sort,
+            link_id:linkId
         }).then(()=>{
             alert('修改成功!');
             location.href='/#/links'
