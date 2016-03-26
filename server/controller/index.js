@@ -12,6 +12,7 @@ const Links      = require('./Links');
 const Logs       = require('./Logs');
 const Staticize  = require('./Staticize');
 const Auth       = require('./Auth');
+const Channel=require('./Info');
 const controller = {
     News: News,
     Activity: Activity,
@@ -19,7 +20,8 @@ const controller = {
     Strategy: Strategy,
     Links: Links,
     Logs: Logs,
-    Staticize: Staticize
+    Staticize: Staticize,
+    Channel:Channel
 };
 
 module.exports = controller;

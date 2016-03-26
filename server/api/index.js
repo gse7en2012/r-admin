@@ -9,8 +9,8 @@ const serviceApi = {
     LinksApi: require('./LinksApi'),
     AuthApi: require('./AuthApi'),
     LogsApi: require('./LogsApi'),
-    NewsApi: require('./NewsApi')
-
+    NewsApi: require('./NewsApi'),
+    InfoApi:require('./InfoApi')
 };
 
 module.exports = serviceApi;

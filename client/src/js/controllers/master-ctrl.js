@@ -3,14 +3,27 @@
  */
 
 angular.module('RDash')
-    .controller('MasterCtrl', ['$scope', '$cookieStore','$http', MasterCtrl]);
+    .controller('MasterCtrl', ['$scope', '$cookieStore','$http','$state', MasterCtrl]);
 
-function MasterCtrl($scope, $cookieStore,$http) {
+function MasterCtrl($scope, $cookieStore,$http,$state) {
     /**
      * Sidebar Toggle & Cookie Control
      */
     var mobileView = 992;
     $scope.navName='新闻管理';
+    $scope.$on('$stateChangeSuccess', function() {
+        //console.log(location.href);
+        const currentTab=location.href.split('/#/')[1].split('/')[0];
+        console.log(currentTab);
+        $('.sidebar-list a').removeClass('cur');
+        $('.sidebar-list a').each(function(index){
+            if($(this).attr('href')=='#/'+currentTab){
+                $(this).addClass('cur');
+               // $scope.navName=$(this).txt();
+            }
+        })
+
+    });
     $scope.getWidth = function() {
         return window.innerWidth;
     };

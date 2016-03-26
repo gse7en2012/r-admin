@@ -29,7 +29,8 @@ function NewsEditCtrl($scope, $cookieStore,$stateParams, newsApiService) {
             author:$scope.author,
             uid:1,
             date:new Date(),
-            content:$scope.content
+            content:$scope.content,
+            news_id:newsId
         }).then(()=>{
             alert('修改成功!');
             location.href='/#/news'

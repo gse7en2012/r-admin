@@ -57,7 +57,7 @@ app.use('/auth', routes.Auth);
 app.use('/news', routes.News);
 app.use('/activity', routes.Activity);
 app.use('/links', routes.Links);
-
+app.use('/info',routes.Info);
 //for umeditor
 app.post('/upload', upload.single('upfile'), (req, res)=> uploadImgRes(req, res, 'images'));
 app.post('/upload/activity', uploadActivity.single('file'), (req, res)=> uploadImgRes(req, res, 'activity'));

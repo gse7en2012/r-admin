@@ -6,7 +6,7 @@
 angular.module('RDash').controller('LinksAddCtrl', ['$scope', '$cookieStore', 'linksApiService', LinksAddCtrl]);
 
 function LinksAddCtrl($scope, $cookieStore, linksApiService) {
-
+    //console.log($scope.name);
     $scope.author=$cookieStore.get('radmin_name');
 
 
@@ -19,7 +19,7 @@ function LinksAddCtrl($scope, $cookieStore, linksApiService) {
         linksApiService.addLinks({
             img:$scope.img,
             author:$scope.author,
-            name:$scope.name,
+            name:$scope.name2,
             link:$scope.link,
             sort:$scope.sort
         }).then(()=>{
