@@ -53,11 +53,11 @@ const InfoController = {
             return $infoHelper.format(data)
         })
     },
-    getChannelArtList(page){
+    getChannelArtList(page,type){
         if (!page || _.isNaN(Number(page))) return Promise.reject('参数错误!');
         const dPage    = page < 1 ? 1 : Number(page);
         const pageSize = 30;
-        return DataBaseModel.ChannelArt.findAndCountAll({
+        const query={
             include: [{
                 model: DataBaseModel.Channel,
                 attributes: ['channel_id', 'channel_name'],
@@ -65,17 +65,21 @@ const InfoController = {
             }],
             offset: (dPage - 1) * pageSize,
             limit: pageSize,
-            order: 'art_id DESC'
-        }).then((data)=>{
+            order: 'art_id DESC',
+        };
+        if(type!=0) query.where={channel_id:type};
+        return DataBaseModel.ChannelArt.findAndCountAll(query).then((data)=>{
             return $infoHelper.formatArt(data,page)
         })
+    },
+    getChannelArtDetails(artId){
+        return DataBaseModel.ChannelArt.findById(artId);
     },
     addChannel(channel){
         const channelInstance = DataBaseModel.Channel.build({
             channel_name: channel.channel_name
         });
         return channelInstance.save().then((channel)=> {
-
             return {
                 channel_id: channel.channel_id,
                 createdAt: moment(channel.createdAt).format('YYYY-MM-DD HH:mm:ss'),
@@ -83,10 +87,34 @@ const InfoController = {
         }
         });
     },
+    editChannelArt(art){
+        return DataBaseModel.ChannelArt.update(art, {
+            where: {art_id: art.art_id}
+        }).then(()=>art)
+    },
+    addChannelArt(art){
+        const artInstance=DataBaseModel.ChannelArt.build({
+            title:art.title,
+            content:art.content,
+            channel_id:art.channel_id,
+            author:art.author,
+            img:art.img,
+            uid:art.uid
+        });
+        return artInstance.save();
+    },
+    deleteChannelArt(artId){
+        return DataBaseModel.ChannelArt.find({
+            where: {art_id: artId}
+        }).then((channel)=> {
+            return channel.destroy();
+        })
+    },
     deleteChannel(channelId){
         return DataBaseModel.Channel.find({
             where: {channel_id: channelId}
         }).then((channel)=> {
+            DataBaseModel.ChannelArt.destroy({where:{channel_id:channelId}});
             return channel.destroy();
         })
     },

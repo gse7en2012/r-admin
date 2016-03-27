@@ -12,6 +12,14 @@ infoRouter.get('/art/list', api.InfoApi.getChannelArtListIF);
 
 infoRouter.post('/add',api.InfoApi.addChannelIF);
 
+infoRouter.post('/art/add',api.InfoApi.addChannelArtIF);
+
+infoRouter.post('/art/delete',api.InfoApi.deleteChannelArtIF);
+
+infoRouter.post('/art/edit',api.InfoApi.editChannelArtIF);
+
+infoRouter.get('/art/details',api.InfoApi.getChannelArtDetailsIF);
+
 infoRouter.post('/edit',api.InfoApi.editChannelIF);
 
 infoRouter.post('/delete',api.InfoApi.deleteChannelIF);

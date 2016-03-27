@@ -15,14 +15,36 @@ function InfoArtListCtrl($scope, $cookieStore, infoApiService) {
     }
 
 
-    infoApiService.getChannelArtList(1).then(bindData2Scope);
+    infoApiService.getChannelArtList(1,0).then(bindData2Scope);
+    infoApiService.getChannelList().then((data)=>{
+        $scope.channelList=[{value:0,name:'所有'}];
+        data.result.dataList.forEach((item)=>{
+            $scope.channelList .push({
+                value:item.channel_id,
+                name:item.name
+            })
+        });
+        $scope.channelId=$scope.channelList[0];
+    });
+
+    $scope.changeChannel=function(){
+        console.log($scope.channelId);
+        infoApiService.getChannelArtList(1,$scope.channelId.value).then(bindData2Scope);
+    };
+    $scope.jump=function(page){
+        infoApiService.getChannelArtList(page,$scope.channelId.value).then(bindData2Scope);
+    };
 
 
     $scope.delete=(newsId)=>{
         if(!confirm('确定删除该文章?')) return false;
-        newsApiService.deleteNews(newsId).then(()=>{
-            alert('删除成功');
-            location.reload();
+        infoApiService.deleteInfoArt(newsId).then(()=>{
+            //alert('删除成功');
+            $scope.dataList.forEach((item,index)=>{
+                if(item.art_id==newsId){
+                    $scope.dataList.splice(index,1)
+                }
+            })
         })
     }
 }

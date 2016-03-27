@@ -8,5 +8,6 @@ module.exports={
     News:require('./News'),
     Activity:require('./Activity'),
     Links:require('./Link'),
-    Info:require('./Info')
+    Info:require('./Info'),
+    Strategy:require('./Strategy')
 };

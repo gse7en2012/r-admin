@@ -36,7 +36,7 @@ function InfoCtrl($scope, $cookieStore, infoApiService) {
     };
 
     $scope.delete=(newsId)=>{
-        if(!confirm('确定删除该栏目?')) return;
+        if(!confirm('确定删除该栏目?\r\n\b该栏目下的文章也会被删除!')) return;
         infoApiService.deleteChannel(newsId).then(()=>{
             $scope.dataList.forEach((item,index)=>{
                 if(item.channel_id==newsId){

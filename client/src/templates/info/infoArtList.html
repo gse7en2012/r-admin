@@ -12,23 +12,25 @@
 <div class="white-box">
     <div class="row">
         <div class="col-xs-12 col-lg-1 col-md-2">
-            <a ng-click="showAdd()" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span>添加文章</a>
+            <a href="#/info/add" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span>添加文章</a>
         </div>
         <div class="col-lg-4 col-md-4">
             <div class="input-group">
-                <input type="text" class="form-control input-sm" placeholder="输入新闻标题..." ng-model="keyword">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" type="button" ng-click="search(keyword)">
-                            <span class="fa fa-search"></span>搜索
-                        </button>
-                    </span>
+                <span class="input-group-addon" id="basic-addon1" style="position: relative;z-index: 99;border-right: 1px solid #ddd;"><i class="fa fa-filter"></i> 根据栏目筛选 </span>
+                <select class="form-control input-sm" ng-model="channelId" id="cc" style="margin-left: -4px;"  ng-options="option.name for option in channelList track by option.value" ng-change="changeChannel()">
+                </select>
+                    <!--<span class="input-group-btn">-->
+                        <!--<button class="btn btn-primary btn-sm" type="button" ng-click="filter(keyword)">-->
+                            <!--<span class="fa fa-filter"></span>筛选-->
+                        <!--</button>-->
+                    <!--</span>-->
             </div>
         </div>
         <div class="col-xs-6 col-md-4 col-lg-offset-1 col-sm-6" style="line-height: 30px;text-align: right">
 
             <button class="btn btn-sm btn-default" ng-click="jumpPrev()" ng-disabled="currentPage<=1"><span class="fa fa-arrow-left"></span></button>
             <button class="btn btn-sm btn-default" ng-click="jumpNext()" ng-disabled="totalCount/30<=1"><span class="fa fa-arrow-right"></span></button>
-            共{{totalCount}}篇新闻,当前页数:{{currentPage}}.
+            共{{totalCount||0}}篇文章,当前页数:{{currentPage}}.
         </div>
         <div class="col-xs-6 col-md-2 col-sm-6 ">
             <div class="input-group">
@@ -60,8 +62,8 @@
                 <td><img ng-src="{{data.img}}" width="28" height="28"></td>
                 <td>{{data.createdAt}}</td>
                 <td>
-                    <a href="#/news/edit/{{data.news_id}}" class="edit-btn"><span class="fa fa-edit"></span>编辑</a>
-                    <a href="#" class="del-btn" ng-click="delete(data.news_id)"><span class="fa fa-trash"></span> 删除</a>
+                    <a href="#/info/edit/{{data.art_id}}" class="edit-btn"><span class="fa fa-edit"></span>编辑</a>
+                    <a  class="del-btn" ng-click="delete(data.art_id)"><span class="fa fa-trash"></span> 删除</a>
                 </td>
             </tr>
             </tbody>

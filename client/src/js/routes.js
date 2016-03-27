@@ -31,6 +31,18 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/news/edit/:news_id',
                 templateUrl: 'templates/news/newsEdit.html'
             })
+            .state('strategy', {
+                url: '/strategy',
+                templateUrl: 'templates/strategy/strategyList.html'
+            })
+            .state('strategyAdd', {
+                url: '/strategy/add',
+                templateUrl: 'templates/strategy/strategyAdd.html'
+            })
+            .state('strategyEdit', {
+                url: '/strategy/edit/:strategy_id',
+                templateUrl: 'templates/strategy/strategyEdit.html'
+            })
             .state('activity', {
                 url: '/activity',
                 templateUrl: 'templates/activity/activityList.html'
@@ -62,6 +74,14 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('infoArt', {
                 url: '/info/list',
                 templateUrl: 'templates/info/infoArtList.html'
-            });
+            })
+            .state('infoArtAdd', {
+                url: '/info/add',
+                templateUrl: 'templates/info/infoArtAdd.html'
+            })
+            .state('infoArtEdit', {
+                url: '/info/edit/:art_id',
+                templateUrl: 'templates/info/infoArtEdit.html'
+            });;
     }
 ]);

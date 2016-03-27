@@ -3,12 +3,12 @@
  */
 'use strict';
 
-angular.module('RDash').controller('NewsEditCtrl', ['$scope', '$cookieStore','$stateParams', 'newsApiService', NewsEditCtrl]);
+angular.module('RDash').controller('StrategyEditCtrl', ['$scope', '$cookieStore','$stateParams', 'strategyApiService', StrategyEditCtrl]);
 
-function NewsEditCtrl($scope, $cookieStore,$stateParams, newsApiService) {
-    const newsId=$stateParams.news_id;
+function StrategyEditCtrl($scope, $cookieStore,$stateParams, strategyApiService) {
+    const strategyId=$stateParams.strategy_id;
 
-    newsApiService.getNewsDetails(newsId).then((data)=>{
+    strategyApiService.getStrategyDetails(strategyId).then((data)=>{
         $scope.content=data.result.content;
         $scope.title=data.result.title;
         $scope.author=data.result.author;
@@ -23,16 +23,16 @@ function NewsEditCtrl($scope, $cookieStore,$stateParams, newsApiService) {
     };
 
     $scope.edit=()=>{
-        newsApiService.editNews({
+        strategyApiService.editStrategy({
             title:$scope.title,
             author:$scope.author,
             uid:1,
             date:new Date(),
             content:$scope.content,
-            news_id:newsId
+            strategy_id:strategyId
         }).then(()=>{
             alert('修改成功!');
-            location.href='/#/news'
+            location.href='/#/strategy'
         })
     }
 }

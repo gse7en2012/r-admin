@@ -55,14 +55,17 @@ app.all('*', interceptor);
 app.use('/', routes.Inits);
 app.use('/auth', routes.Auth);
 app.use('/news', routes.News);
+app.use('/strategy',routes.Strategy);
 app.use('/activity', routes.Activity);
 app.use('/links', routes.Links);
 app.use('/info',routes.Info);
+
+
 //for umeditor
 app.post('/upload', upload.single('upfile'), (req, res)=> uploadImgRes(req, res, 'images'));
 app.post('/upload/activity', uploadActivity.single('file'), (req, res)=> uploadImgRes(req, res, 'activity'));
 app.post('/upload/links', uploadLinks.single('file'), (req, res)=> uploadImgRes(req, res, 'links'));
-
+app.post('/upload/info', uploadLinks.single('file'), (req, res)=> uploadImgRes(req, res, 'info'));
 
 app.use(express.static(path.resolve('client/dist/')));
 app.use(express.static(path.resolve('server/upload/')));

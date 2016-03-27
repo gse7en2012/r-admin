@@ -1,0 +1,78 @@
+<div data-ng-controller="InfoArtAddCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <ul class="nav nav-tabs ">
+                    <li role="presentation" ><a href="#/info">资料栏目管理</a></li>
+                    <li role="presentation"  class="active"><a>资料文章管理</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<div class="white-box">
+    <div class="row">
+        <div class="col-lg-12">
+            <div  class="input-group" style="visibility: hidden;
+    margin-bottom: -20px;">
+                <input type="text" class="form-control input-sm" placeholder="输入新增栏目名称..." ng-model="addName">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" type="button">
+                            确定添加
+                        </button>
+                    </span>
+            </div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="cc" class="col-sm-1 control-label">所属栏目</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" ng-model="channelId" id="cc" ng-init="channelList[0].channel_id">
+                            <option ng-repeat="data in channelList" value={{data.channel_id}}>{{data.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="author" class="col-sm-1 control-label">文章标题</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="author" placeholder="文章标题" ng-model="title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-1 control-label">文章作者</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="date" placeholder="发布时间" ng-model="author">
+                    </div>
+                </div>
+                <div flow-init="{target: '/upload/links',testChunks:false}"
+                     flow-files-submitted="$flow.upload()"
+                     flow-file-success="uploadSuccess($message)">
+                    <div class="form-group">
+                        <label for="date" class="col-sm-1 control-label">小图标</label>
+
+                        <div class="col-sm-9">
+                            <img src="http://www.placehold.it/28x28/DDDDDD/AAAAAA&amp;text=28x28"
+                                 ng-show="!$flow.files.length" width="28" height="28"/>
+                            <img flow-img="$flow.files[0]" ng-show="$flow.files.length" width="28" height="28"/>
+                            <span class="btn btn-default btn-sm" flow-btn><i class="fa fa-image"></i>选择图片</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-1 control-label">文章内容</label>
+
+                    <div class="col-sm-9">
+                        <div id="container"  config="ct" ng-model="content" lock-umeditor></div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <button ng-click="add()" class="btn btn-primary"><i class="fa fa-send-o"></i> 发布</button>
+                        <a class="btn btn-default" href='/#/info/list'><i class="fa fa-close"></i> 返回</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

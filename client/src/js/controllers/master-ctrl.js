@@ -3,35 +3,35 @@
  */
 
 angular.module('RDash')
-    .controller('MasterCtrl', ['$scope', '$cookieStore','$http','$state', MasterCtrl]);
+    .controller('MasterCtrl', ['$scope', '$cookieStore', '$http', '$state', MasterCtrl]);
 
-function MasterCtrl($scope, $cookieStore,$http,$state) {
+function MasterCtrl($scope, $cookieStore, $http, $state) {
     /**
      * Sidebar Toggle & Cookie Control
      */
     var mobileView = 992;
-    $scope.navName='新闻管理';
-    $scope.$on('$stateChangeSuccess', function() {
+    $scope.navName = '新闻管理';
+    $scope.$on('$stateChangeSuccess', function () {
         //console.log(location.href);
-        const currentTab=location.href.split('/#/')[1].split('/')[0];
+        const currentTab = location.href.split('/#/')[1].split('/')[0];
         console.log(currentTab);
         $('.sidebar-list a').removeClass('cur');
-        $('.sidebar-list a').each(function(index){
-            if($(this).attr('href')=='#/'+currentTab){
+        $('.sidebar-list a').each(function () {
+            if ($(this).attr('href') == '#/' + currentTab) {
                 $(this).addClass('cur');
-               // $scope.navName=$(this).txt();
+                $scope.navName = $(this).text();
             }
         })
 
     });
-    $scope.getWidth = function() {
+    $scope.getWidth = function () {
         return window.innerWidth;
     };
 
-    $scope.$watch($scope.getWidth, function(newValue, oldValue) {
+    $scope.$watch($scope.getWidth, function (newValue, oldValue) {
         if (newValue >= mobileView) {
             if (angular.isDefined($cookieStore.get('toggle'))) {
-                $scope.toggle = ! $cookieStore.get('toggle') ? false : true;
+                $scope.toggle = !$cookieStore.get('toggle') ? false : true;
             } else {
                 $scope.toggle = true;
             }
@@ -41,20 +41,20 @@ function MasterCtrl($scope, $cookieStore,$http,$state) {
 
     });
 
-    $scope.toggleSidebar = function() {
+    $scope.toggleSidebar = function () {
         $scope.toggle = !$scope.toggle;
         $cookieStore.put('toggle', $scope.toggle);
     };
 
-    $scope.setNavName=function(obj){
+    $scope.setNavName = function (obj) {
         $('.sidebar-list a').removeClass('cur');
         $(obj.target).addClass('cur');
-        $scope.navName=$(obj.target).text()==''?$(obj.target).parent().text():$(obj.target).text();
+        $scope.navName = $(obj.target).text() == '' ? $(obj.target).parent().text() : $(obj.target).text();
     };
-    $scope.name=$cookieStore.get('radmin_name');
+    $scope.name       = $cookieStore.get('radmin_name');
 
 
-    window.onresize = function() {
+    window.onresize = function () {
         $scope.$apply();
     };
 
