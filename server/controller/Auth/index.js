@@ -9,15 +9,17 @@ const Config        = require('../../config');
 const _             = require('underscore');
 const cryptoUtils   = require('popularcrypto');
 const globalHelpers = require('../../helpers');
+const moment        = require('moment');
 
 const AuthController = {
-    generateAdminUser(username, password){
+    generateAdminUser(username, password,permissions){
         const originPassword = password || cryptoUtils.randomString(8);
         return DataBaseModel.Users.findOrCreate({
             where: {name: username},
             defaults: {
                 name: username,
-                password: cryptoUtils.md5(originPassword + Config.passwordSalt)
+                password: cryptoUtils.md5(originPassword + Config.passwordSalt),
+                permissions:permissions||0
             }
         }).then(()=> {
             return {
@@ -26,7 +28,7 @@ const AuthController = {
             }
         });
     },
-    loginAdminUser(username, password){
+    loginAdminUser(username, password,ip){
         if (!username || !password) return Promise.reject('参数不完整');
         return DataBaseModel.Users.find({
             where: {
@@ -34,9 +36,16 @@ const AuthController = {
                 password: cryptoUtils.md5(password + Config.passwordSalt)
             }
         }).then((user)=> {
-            if (!user) return Promise.reject('用户名或密码错误')
+            if (!user) return Promise.reject('用户名或密码错误');
+            if (user.is_ban == 1) return Promise.reject('账户已被禁用');
             user.login_time = new Date();
             user.save();
+            const loginLog=DataBaseModel.LoginLogs.build({
+                login_time:new Date(),
+                login_uid: user.uid,
+                login_ip: ip
+            });
+            loginLog.save();
             return {
                 name: user.name,
                 uid: user.uid
@@ -57,9 +66,39 @@ const AuthController = {
                 password: newPassword
             }
         })
+    },
+    getUserList(){
+        return DataBaseModel.Users.findAll({
+            attributes: ['uid', 'name', 'login_time', 'permissions', 'is_ban', 'createdAt']
+        }).then((users)=> {
+            users.forEach((item)=> {
+                console.log(item);
+                item.dataValues.login_time = moment(item.dataValues.login_time).format('YYYY-MM-DD HH:mm:ss');
+                item.dataValues.createdAt  = moment(item.dataValues.createdAt).format('YYYY-MM-DD HH:mm:ss')
+            });
+            return users;
+        })
+    },
+    checkIsMaster(uid){
+        return DataBaseModel.Users.find({
+            where: {uid: uid},
+            attributes: ['permissions']
+        }).then((r)=> {
+            return r ? 1 : 0
+        })
+    },
+    banAccount(uid, type){
+        return DataBaseModel.Users.find({
+            where: {uid: uid}
+        }).then((user)=> {
+            if (user) {
+                user.is_ban = Number(type);
+                user.save();
+            }
+            return type;
+        })
     }
 };
-
 
 module.exports = AuthController;
 

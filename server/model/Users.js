@@ -9,7 +9,8 @@ module.exports = (seq, DataType)=> {
         name: {type: DataType.TEXT},
         password: {type: DataType.TEXT},
         login_time: {type: DataType.DATE},
-        permissions: {type: DataType.TEXT}
+        permissions: {type: DataType.TEXT},
+        is_ban: {type: DataType.INTEGER}
     }, {
         timestamps: true,
         comment: '用户表'

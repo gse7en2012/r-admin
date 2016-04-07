@@ -2,10 +2,10 @@
  * Created by zhuzhipeng on 15/12/25.
  */
 'use strict';
-
 const cryptoUtils   = require('popularcrypto');
 const _             = require('underscore');
 const apiVersion    = require('../config').apiVersion;
+const DataBaseModel=require('../model');
 const saltV2        = 'GSEVEN';
 const keySalt       = 'radmin';
 
@@ -25,11 +25,13 @@ const encryptConfig = {
 };
 
 const globalHelpers = {
-    log(){
-        const log = console.log;
-        if (process.env.NODE_ENV === 'dev') {
-            log.apply(console, arguments);
-        }
+    logAction(uid,ctx){
+        const log=DataBaseModel.Logs.build({
+            logs_uid:uid,
+            logs_ctx:ctx,
+            datetime:new Date()
+        });
+        return log.save();
     },
     resSuccess(res, r, code){
         return res.status(code || 200).json({
@@ -41,27 +43,11 @@ const globalHelpers = {
             msg: e || 'fail'
         });
     },
-    checkRequest(req, opts) {
-        //opts 是数组
-        if (!req.header('CAppVersion') || !req.header('CSecret') || !req.header('CAnswer')) {
-            return (req.header('User-Agent') && req.header('User-Agent').indexOf('Mac OS X') !== -1);
-        }
-        const CAppVersion  = req.header('CAppVersion');
-        const ClientType   = req.header('ClientType');
-        const CChannelName = req.header('CChannelName');
-        const CTime        = req.header('CSecret');
-        const CAnswer      = req.header('CAnswer');
-        let result         = saltV2 + CAppVersion + ClientType + CChannelName + CTime;
-        if (opts && opts.length > 0) {
-            opts.sort();
-            for (const item of opts) {
-                if (req.body[item]) {
-                    result += req.body[item];
-                }
-            }
-        }
-        result = cryptoUtils.md5(result);
-        return result === CAnswer;
+    checkRequest(req) {
+        const uri        = req.originalUrl;
+        if(uri.indexOf('/login')) return true;
+        return !!(req.header('radmin_token') || req.cookies['radmin_token']);
+
     },
     buildToken(uid){
         const timeSalt = (new Date()).valueOf();
@@ -84,6 +70,15 @@ const globalHelpers = {
         }
     },
     interceptor(req, res, next){
+
+        if(!globalHelpers.checkRequest(req)){
+            return globalHelpers.resFailure(res, '请先登录！');
+        }
+
+        const uri        = req.originalUrl;
+        if(uri.indexOf('/delete')!=-1){
+            globalHelpers.logAction(req.adminUid,uri+'|'+JSON.stringify(req.params))
+        }
         //不是开发环境，则校验请求头
         //const uri        = req.originalUrl;
         //const checkIndex = encryptConfig.encryptRoute.indexOf(uri);

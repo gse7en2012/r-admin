@@ -7,7 +7,7 @@
 const moment        = require('moment');
 const DataBaseModel = require('../../model');
 const _             = require('underscore');
-
+const logAction     = require('../../helpers').logAction;
 
 
 const $strategyHelper = {
@@ -32,10 +32,10 @@ const $strategyHelper = {
 
 
 const StrategyController = {
-    getStrategyList(page){
+    getStrategyList(page,pageS){
         if (!page || _.isNaN(Number(page))) return Promise.reject('参数错误!');
         const dPage    = page < 1 ? 1 : Number(page);
-        const pageSize = 30;
+        const pageSize = pageS||30;
         return DataBaseModel.Strategy.findAndCountAll({
             offset: (dPage - 1) * pageSize,
             limit: pageSize,
@@ -58,6 +58,7 @@ const StrategyController = {
         }).then($strategyHelper.format)
     },
     addStrategy(strategy){
+        const Staticize = require('../../comm/Staticize');
         const strategyInstance=DataBaseModel.Strategy.build({
             title:strategy.title,
             author:strategy.author,
@@ -65,7 +66,15 @@ const StrategyController = {
             date:strategy.date||new Date(),
             content:strategy.content
         });
-        return strategyInstance.save();
+        return strategyInstance.save().then((strategyD)=>{
+            strategyInstance.date=moment(strategyInstance.date).format('YYYY-MM-DD HH:mm:ss');
+            Staticize.compileInsidePage('strategy', strategyD.strategy_id, strategyInstance).then((r)=> {
+                strategyInstance.s_link = r;
+                strategyInstance.save();
+            });
+            Staticize.compileStrategy();
+            return strategyInstance;
+        });
     },
     deleteStrategy(strategyId){
         return DataBaseModel.Strategy.find({
@@ -81,24 +90,4 @@ const StrategyController = {
     }
 };
 
-
-//StrategyController.getStrategyList(1).then((r)=> {console.log(r);});
-//StrategyController.addStrategy({
-//    title:'股票大涨',
-//    author:'股市大涨',
-//    uid:2,
-//    date:new Date()
-//}).then((r)=>{
-//    console.log(r);
-//})
-function tester(promise){
-    promise.then(r=>{console.log(r);})
-}
-//tester(StrategyController.searchStrategy('测试'));
-//tester(StrategyController.deleteStrategy(4));
-//tester(StrategyController.editStrategy({
-//    strategy_id:1,
-//    title:'不要用这样',
-//    author:'啊起'
-//}));
 module.exports = StrategyController;

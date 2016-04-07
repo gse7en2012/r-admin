@@ -1,6 +1,6 @@
-/**
- * Created by zhuzhipeng on 16/3/10.
- */
+
+
+console.log('route load');
 
 module.exports={
     Auth:require('./Auth'),

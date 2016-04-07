@@ -7,7 +7,7 @@
 const moment        = require('moment');
 const DataBaseModel = require('../../model');
 const _             = require('underscore');
-
+const logAction     = require('../../helpers').logAction;
 
 const $infoHelper = {
     format(data){
@@ -122,7 +122,36 @@ const InfoController = {
         return DataBaseModel.Channel.update(channel, {
             where: {channel_id: channel.channel_id}
         }).then(()=>channel)
+    },
+    getChannelInfoList(){
+        return DataBaseModel.ChannelArt.findAll({
+            include: [{
+                model: DataBaseModel.Channel
+            }],
+            attributes: {exclude: ['content']}
+        }).then((r)=>{
+            const map={}; const result=[];
+            r.forEach((row)=>{
+                if(!map[row.channel.channel_id]){
+                    map[row.channel.channel_id]={
+                        name:row.channel.channel_name,
+                        data:[]
+                    }
+                }
+                map[row.channel.channel_id].data.push({
+                    title:row.title,
+                    img:row.img
+                })
+            });
+            Object.keys(map).forEach((item)=>{
+                result.push({
+                    name:map[item].name,
+                    data:map[item].data
+                })
+            });
+            return result;
+        })
     }
 };
-//InfoController.getChannelArtList(1);
+
 module.exports = InfoController;

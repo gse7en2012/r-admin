@@ -4,7 +4,6 @@
 const express    = require('express');
 const activityRouter = new express.Router();
 const api        = require('../../api');
-
 activityRouter.get('/list', api.ActivityApi.getActivityListIF);
 
 activityRouter.get('/details',api.ActivityApi.getActivityDetailsIF);

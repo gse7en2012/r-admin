@@ -62,8 +62,8 @@
             <li class="sidebar-list">
                 <a href="#/logs" ng-click="setNavName($event)">日志管理 <span class="menu-icon fa fa-file-text-o"></span></a>
             </li>
-            <li class="sidebar-list">
-                <a href="#/users" ng-click="setNavName($event)">用户管理 <span class="menu-icon fa fa-users"></span></a>
+            <li class="sidebar-list" ng-if="isMasterAdmin">
+                <a href="#/user" ng-click="setNavName($event)">用户管理 <span class="menu-icon fa fa-users"></span></a>
             </li>
         </ul>
         <div class="sidebar-footer">

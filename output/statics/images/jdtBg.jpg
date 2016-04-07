@@ -1,0 +1,595 @@
+  
+ 
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>去吧皮卡丘_去吧比卡丘游戏攻略 - 去吧皮卡丘手游官网</title>
+    <meta name="keywords" content="皮卡丘,去吧皮卡丘,去吧比卡丘,皮卡丘游戏,皮卡丘手游">
+    <meta name="description" content="《去吧皮卡丘》是由日掌机游戏系列《口袋妖怪》和动画《神奇宝贝》《宠物小精灵》狂热爱好者联盟倾情打造。去吧皮卡丘官网为您提供去吧皮卡丘下载和攻略,新手卡，礼包等。">
+    <link href="http://p.skymoons.com/statics/css/pkq/style.css?v2015082015" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://p.skymoons.com/statics/js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://p.skymoons.com/statics/js/jquery.sgallery.js"></script>
+    <script type="text/javascript" src="http://p.skymoons.com/statics/js/pkq/scroll.js"></script>
+    <script type="text/javascript" src="http://p.skymoons.com/statics/js/pkq/all.js?v2014062702"></script>
+    <meta name="baidu-site-verification" content="mWKS7z7H5F" />
+</head>
+<body>
+    <div id="main">
+        <div style="DISPLAY: none" id=goTopBtn><img border=0 src="http://p.skymoons.com/statics/images/pkq/top_1.png" alt="返回皮卡丘官网顶部"></div>
+
+        <div id="head_top">
+            <div id="banner">
+                <ul class="c-af ">
+                    <li class="split_01"></li>
+                    <li class="index">
+                        <a href="/index.html">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                    <li class="split_01"></li>
+                    <li class="news">
+                        <a href="/newslist/index.html">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                    <li class="split_01"></li>
+                    <li>
+                        <img src="http://p.skymoons.com/statics/images/pkq/logo.png?v=20150813" alt="去吧皮卡丘手游"/>
+                    </li>
+                    <li class="split_01"></li>
+                    <li class="bbs">
+                        <a href="javascript:void(0);" onClick="alert('暂未开启，敬请期待...');">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                    <li class="split_01"></li>
+                    <li class="activity">
+                        <a href="/activity/index.html">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                    <li class="split_01"></li>
+                </ul>
+            </div>
+            <div id="top_download">
+                <ul>
+                    <li class="app">
+                        <a href="/index.php?m=content&c=downGame&a=ios" title="去吧皮卡丘IOS正版下载">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                    <li class="ios">
+                        <a href="/index.php?m=content&c=downGame&a=pios" target="_blank" title="去吧皮卡丘 越狱下载">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                    <li class="android">
+                        <a href="/index.php?m=content&c=downGame&a=andro" title="去吧皮卡丘安卓下载">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                <li class="computer" style=" display:none">        
+		<a href="/index.php?m=content&c=downGame&a=win" title="去吧皮卡丘下载">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                    <li class="lbm">
+                        <a href="/index.php?m=content&c=index&a=lists&catid=42" title="去吧皮卡丘礼包领取">
+                            <div class="tab_link"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main_content" class="c-af">
+
+            <div id="main_left">
+
+               <div id="pic_ad">
+		            <div class="jdt">
+                	<ul id="jdtBtn" style="list-style:none;">
+                                                              		                  	
+                           <li class="" ><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png" alt="皮卡丘"></li>
+                         
+                                          	                      		                  	
+                           <li class="" ><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png" alt="皮卡丘"></li>
+                         
+                                          	                      		                  	
+                           <li class="" ><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png" alt="皮卡丘"></li>
+                         
+                                          	                      		                  	
+                           <li class="" ><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png" alt="皮卡丘"></li>
+                         
+                                          	  	
+                                            <!--<li class="avtive"><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png"></li>
+                	                		<li class=""><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png"></li>
+                	                		<li class=""><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png"></li>
+                	                		<li class=""><img src="http://p.skymoons.com/statics/images/pkq/Point_3.png"></li>-->
+                	                	</ul>
+                    <ol style="width: 4254px; left: 0px;" id="jdtList">
+					 					                             <li><a href="http://p.skymoons.com/news/2016/0309/425.html" title="欢乐更新送福利，海量豪礼爽不停" target="_blank"><img src="http://p.skymoons.com/uploadfile/2016/0309/20160309060353264.jpg" alt="欢乐更新送福利，海量豪礼爽不停" style="width:709px;height:330px;"></a></li>
+                            
+                	                             <li><a href="http://p.skymoons.com/news/2016/0307/424.html" title="《去吧皮卡丘》2.4.0版本更新公告" target="_blank"><img src="http://p.skymoons.com/uploadfile/2016/0307/20160307110325332.jpg" alt="《去吧皮卡丘》2.4.0版本更新公告" style="width:709px;height:330px;"></a></li>
+                            
+                	                             <li><a href="http://p.skymoons.com/news/2016/0304/423.html" title="妇女节活动来袭，海量豪礼送不停" target="_blank"><img src="http://p.skymoons.com/uploadfile/2016/0304/20160304103445361.jpg" alt="妇女节活动来袭，海量豪礼送不停" style="width:709px;height:330px;"></a></li>
+                            
+                	                             <li><a href="http://p.skymoons.com/news/2016/0301/422.html" title="三月春里送好礼,阳光明媚穿时装" target="_blank"><img src="http://p.skymoons.com/uploadfile/2016/0301/20160301093710852.jpg" alt="三月春里送好礼,阳光明媚穿时装" style="width:709px;height:330px;"></a></li>
+                            
+                	  		                    			
+                			                    </ol>
+                </div>
+
+
+ 
+                <!--    <a href="><img src="" /></a>
+                    -->
+
+                 <!--  <img src="http://p.skymoons.com/statics/images/pkq/test_pic_01.jpg" style="overflow: hidden;" /> -->
+                </div>
+				 			                <div id="news_list">
+                    <div id="news_list_title">
+                        <a href="http://p.skymoons.com/news/index.html">
+                            <img src="http://p.skymoons.com/statics/images/pkq/btn_more_01.png" alt="更多皮卡丘新闻" class="btn_pic_more" />
+                        </a>
+                    </div>
+                                  
+				  
+                                                    <div class="news_list_item">
+                        <div class="news_thumb">
+                            <a href="http://p.skymoons.com/news/2016/0309/425.html" title=“欢乐更新送福利，海量豪礼爽不停”> <img src="http://p.skymoons.com/uploadfile/2016/0309/20160309060353264.jpg" alt="欢乐更新送福利，海量豪礼爽不停" style="width:200px;height:118px;" />
+                            </a>
+                       </div>
+                         <p style="*width:470px;">
+                            <span class="news_title"><a href="http://p.skymoons.com/news/2016/0309/425.html" title="欢乐更新送福利，海量豪礼爽不停">欢乐更新送福利，海量豪礼爽不停</a></span>
+							<span class="news_time">[03/09]</span>
+                        </p>
+                        <p class="news_brief" style="margin-top:5px;*width:470px;">
+                             版本更新啦,新的玩法上线啦,大大们赶紧来体验一下!有海量稀有道具可以获得哦!同时还有超值活动,为大大们征战新副本提供支持,让您尽情的畅爽                          </p>
+                	 <p style="*width:470px;"><a href="http://p.skymoons.com/news/2016/0309/425.html" title="比卡丘详情" class="line_c">查看详情>></a></p>
+                     </div>
+               
+                                    <div class="news_list_item">
+                        <div class="news_thumb">
+                            <a href="http://p.skymoons.com/news/2016/0307/424.html" title=“《去吧皮卡丘》2.4.0版本更新公告”> <img src="http://p.skymoons.com/uploadfile/2016/0307/20160307110325332.jpg" alt="《去吧皮卡丘》2.4.0版本更新公告" style="width:200px;height:118px;" />
+                            </a>
+                       </div>
+                         <p style="*width:470px;">
+                            <span class="news_title"><a href="http://p.skymoons.com/news/2016/0307/424.html" title="《去吧皮卡丘》2.4.0版本更新公告">《去吧皮卡丘》2.4.0版本更新公告</a></span>
+							<span class="news_time">[03/07]</span>
+                        </p>
+                        <p class="news_brief" style="margin-top:5px;*width:470px;">
+                             最火爆卡牌养成手游《去吧皮卡丘》计划于3月9日迎来重大更新，2 4 0版本将隆重上线，赏金副本福利奉上!我们暂定于3月9上午8：00&mdash;12：00进                          </p>
+                	 <p style="*width:470px;"><a href="http://p.skymoons.com/news/2016/0307/424.html" title="比卡丘详情" class="line_c">查看详情>></a></p>
+                     </div>
+               
+                                    <div class="news_list_item">
+                        <div class="news_thumb">
+                            <a href="http://p.skymoons.com/news/2016/0304/423.html" title=“妇女节活动来袭，海量豪礼送不停”> <img src="http://p.skymoons.com/uploadfile/2016/0304/20160304103445361.jpg" alt="妇女节活动来袭，海量豪礼送不停" style="width:200px;height:118px;" />
+                            </a>
+                       </div>
+                         <p style="*width:470px;">
+                            <span class="news_title"><a href="http://p.skymoons.com/news/2016/0304/423.html" title="妇女节活动来袭，海量豪礼送不停">妇女节活动来袭，海量豪礼送不停</a></span>
+							<span class="news_time">[03/04]</span>
+                        </p>
+                        <p class="news_brief" style="margin-top:5px;*width:470px;">
+                             烟花三月下扬州，三月，是万物复苏的日子，春天的气息已经透过嫩芽报出了讯号;三月，是属于妹子们欢乐节日，春装上场，更有响应女人撑起半                          </p>
+                	 <p style="*width:470px;"><a href="http://p.skymoons.com/news/2016/0304/423.html" title="比卡丘详情" class="line_c">查看详情>></a></p>
+                     </div>
+               
+                                    <div class="news_list_item">
+                        <div class="news_thumb">
+                            <a href="http://p.skymoons.com/news/2016/0301/422.html" title=“三月春里送好礼,阳光明媚穿时装”> <img src="http://p.skymoons.com/uploadfile/2016/0301/20160301093710852.jpg" alt="三月春里送好礼,阳光明媚穿时装" style="width:200px;height:118px;" />
+                            </a>
+                       </div>
+                         <p style="*width:470px;">
+                            <span class="news_title"><a href="http://p.skymoons.com/news/2016/0301/422.html" title="三月春里送好礼,阳光明媚穿时装">三月春里送好礼,阳光明媚穿时装</a></span>
+							<span class="news_time">[03/01]</span>
+                        </p>
+                        <p class="news_brief" style="margin-top:5px;*width:470px;">
+                             春天天气真好,阳光明媚,心情甚好!小智给大大带来新的活动,人人都想要的时装,还有稀有的精灵觉得礼包,大大们可以给自己和心爱的精灵宝贝提升                          </p>
+                	 <p style="*width:470px;"><a href="http://p.skymoons.com/news/2016/0301/422.html" title="比卡丘详情" class="line_c">查看详情>></a></p>
+                     </div>
+               
+                                   
+              </div>
+                
+            </div>
+
+            <div id="main_right">
+
+
+    <!--<div id="weixin_box">
+        <img src="http://p.skymoons.com/statics/images/pkq/weixin_01.png" />
+    </div>-->
+    <div>
+        <img src='http://p.skymoons.com/statics/images/pkq/new_rigth1.png?20151117'>
+    </div>
+
+
+
+    <div class="right_item_box">
+				         <div class="right_item_title">
+            <img src="http://p.skymoons.com/statics/images/pkq/t_img_yxgl.png" alt="去吧皮卡丘" /><a href="http://p.skymoons.com/yxgl/"><img  src="http://p.skymoons.com/statics/images/pkq/btn_more_01.png" alt="去吧皮卡丘攻略"/></a>
+        </div>
+		          
+        <ul class="yxgl_lst">
+		                     <li>
+                <a href="http://p.skymoons.com/yxgl/2015/0908/346.html" title="《去吧皮卡丘》稀有宝箱及内容介绍">《去吧皮卡丘》稀有宝箱及内容介绍</a>
+            </li>
+		             <li>
+                <a href="http://p.skymoons.com/yxgl/2014/0928/108.html" title="《去吧皮卡丘》七星组合分析——转自4399">《去吧皮卡丘》七星组合分析——转自4399</a>
+            </li>
+		             <li>
+                <a href="http://p.skymoons.com/yxgl/2014/0928/107.html" title="《去吧皮卡丘》f4组合详解——转自4399">《去吧皮卡丘》f4组合详解——转自4399</a>
+            </li>
+		             <li>
+                <a href="http://p.skymoons.com/yxgl/2014/0918/101.html" title="去吧皮卡丘1.1.0版本简易测评（转自18183）">去吧皮卡丘1.1.0版本简易测评（转自18183）</a>
+            </li>
+		             <li>
+                <a href="http://p.skymoons.com/yxgl/2014/0902/86.html" title="《去吧皮卡丘》不可错过的金币获取技巧">《去吧皮卡丘》不可错过的金币获取技巧</a>
+            </li>
+		           
+        </ul>
+         <div class="right_item_title">
+            <img src="http://p.skymoons.com/statics/images/pkq/t_img_yxzl.png" alt="去吧皮卡丘" />
+        </div>
+
+
+
+        <ul id="right_item_yxzl">
+            <li>
+                <dl>
+                    <dt class="c-af" >
+                        <img src="http://p.skymoons.com/statics/images/pkq/t_img_yxzl_jcxt.png" style="float: left;" />
+						<a href="javascript:;"  id="jcxt"><img src="http://p.skymoons.com/statics/images/pkq/ic_arrow_down.png" style="float: right;" alt="基础系统"/></a>
+                    </dt>
+					<dd class="c-af" style="display: block;"> 
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_zrxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=17&pc_hash=rgliSq" title="皮卡丘阵容系统">阵容系统</a>
+                        </div>
+					
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_zdxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=18&pc_hash=rgliSq" title="战斗系统">战斗系统</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_fbxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=19&pc_hash=rgliSq" title="副本系统">副本系统</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_jlxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=20&pc_hash=rgliSq" title="精灵系统">精灵系统</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_zbxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=21&pc_hash=rgliSq" title="皮卡丘装备系统">装备系统</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_sjxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=22&pc_hash=rgliSq" title="社交系统">社交系统</a>
+                        </div>
+						 
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt class="c-af">
+                        <img src="http://p.skymoons.com/statics/images/pkq/t_img_yxzl_jjxt.png" alt="去吧皮卡丘" style="float: left;" /><img src="http://p.skymoons.com/statics/images/pkq/ic_arrow_down.png" style="float: right;"/>
+                    </dt>
+                    <dd style="display: none;">
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_zbqh.png" alt="装备强化"/><a href="/index.php?m=content&c=index&a=lists&catid=23&pc_hash=rgliSq" title="装备强化">装备强化</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_jlqh.png" /><a href="/index.php?m=content&c=index&a=lists&catid=24&pc_hash=rgliSq">精灵强化</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_jlzs.png" /><a href="/index.php?m=content&c=index&a=lists&catid=25&pc_hash=rgliSq">精灵转生</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_smsd.png" /><a href="/index.php?m=content&c=index&a=lists&catid=26&pc_hash=rgliSq">神秘商店</a>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt class="c-af">
+                        <img src="http://p.skymoons.com/statics/images/pkq/t_img_yxzl_tsxt.png" style="float: left;" /><img src="http://p.skymoons.com/statics/images/pkq/ic_arrow_down.png" style="float: right;" />
+                    </dt>
+                    <dd style="display: none;">
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_hcxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=27&pc_hash=rgliSq">合成系统</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_txxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=28&pc_hash=rgliSq">探险系统</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_jyxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=29&pc_hash=rgliSq">家园系统</a>
+                        </div>
+                        <div>
+                            <img src="http://p.skymoons.com/statics/images/pkq/ic_yxzl_jjxt.png" /><a href="/index.php?m=content&c=index&a=lists&catid=30&pc_hash=rgliSq">竞技系统</a>
+                        </div>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+
+        <!--<div class="right_item_title">
+            <img src="http://p.skymoons.com/statics/images/pkq/t_img_kfzx.png" alt="去吧皮卡丘客服中心" />
+				
+        </div>
+        <div class="right_item_kf">
+            <div>
+                <div class="right_item_kf_title">
+                    <img src="http://p.skymoons.com/statics/images/pkq/ic_tel.png" />
+                </div>
+                4000889936
+            </div>
+            
+            <div style="height:54px;*float:none;*text-align:left;">
+                <div class="right_item_kf_title">官方Q群</div>
+                ①107784821 ②103096630<br /><span style="margin-left:60px;">③338515850 ④257295095</span><br/>
+	   <span style="margin-left:-15px;">⑤91837233</span>
+				
+            </div> 
+            <div style="margin-top:10px;">
+                <div class="right_item_kf_title">客服QQ</div>
+                800086778
+            </div>
+            <div>
+                <div class="right_item_kf_title"></div>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=800086778&site=skymoons.com&menu=yes" target="_blank">
+                    <img alt="客服QQ:800086778" title="点击与客服联系" src="http://p.skymoons.com/statics/images/pkq/btn_qq.jpg" />
+                </a>
+            </div>
+        </div>-->
+         <div class="right_item_title">
+            <img src="http://p.skymoons.com/statics/images/pkq/t_img_yqlj.png" alt="" title="" />
+        </div>
+        <div id="friend_link">
+			              
+                            <a href="http://www.8477.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/1215/20151215021645287.jpg"
+                 alt="8477手游网" title="8477手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.fpwap.com/qbpkq/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0807/20150807045826771.png"
+                 alt="飞鹏网" title="飞鹏网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.pc6.com/ku/qubapikaqiu/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0804/20150804103815309.png"
+                 alt="pc6" title="pc6"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.47473.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0721/20150721031637403.jpg"
+                 alt="47473" title="47473"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.11773.com" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0617/20150617111954299.jpg"
+                 alt="11773" title="11773"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.5253.com/game/3875.html" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0616/20150616050039388.jpg"
+                 alt="5253" title="5253"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.qigame.cn/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0519/20150519083424508.png"
+                 alt="起游网" title="起游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.66u.com" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0519/20150519083314303.jpg"
+                 alt="66U" title="66U"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.9669.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0512/20150512095507367.jpg"
+                 alt="" title=""  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://lqsy.net/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0506/20150506103310118.jpg"
+                 alt="乐趣" title="乐趣"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.joyme.com/wiki/qbpkq/index.shtml" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0318/20150318062402467.jpg"
+                 alt="着迷网" title="着迷网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.66sy.com/ku/123" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0318/20150318022359271.jpg"
+                 alt="66手游网" title="66手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.anqu.com/qbpkq/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0310/20150310012955968.jpg"
+                 alt="安趣网" title="安趣网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.mkzoo.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0116/20150116060248144.png"
+                 alt="游乐猿" title="游乐猿"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.576.com/qbpkq/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2015/0104/20150104030238297.png"
+                 alt="576手游" title="576手游"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.shouyou520.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/1120/20141120053625884.jpg"
+                 alt="爱手游网" title="爱手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.52pk.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/1119/20141119112449457.jpg"
+                 alt="52PK" title="52PK"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.996.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/1117/20141117053415564.png"
+                 alt="996" title="996"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.97973.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/1117/20141117024215281.jpg"
+                 alt="97973" title="97973"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.banma.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/1029/20141029110541524.png"
+                 alt="斑马网" title="斑马网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://sy.766.com" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/1024/20141024112436757.png"
+                 alt="齐乐乐手游网" title="齐乐乐手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.aiyou.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0929/20140929035845681.jpg"
+                 alt="爱游网" title="爱游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://m.twan.cn/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918022818566.png"
+                 alt="天玩网" title="天玩网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.anfan.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918022747230.jpg"
+                 alt="安锋网" title="安锋网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.yxzoo.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918022657776.jpg"
+                 alt="游戏园" title="游戏园"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.gameegg.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111944895.jpg"
+                 alt="游戏蛋蛋" title="游戏蛋蛋"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.youba.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111923412.jpg"
+                 alt="游吧" title="游吧"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.yoyou.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111853327.jpg"
+                 alt="优游网" title="优游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.xiaopi.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111821828.jpg"
+                 alt="小皮游戏" title="小皮游戏"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.61166.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111751278.png"
+                 alt="微玩网" title="微玩网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.wanba123.cn/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111703585.jpg"
+                 alt="玩吧" title="玩吧"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.shouyoubus.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111638947.jpg"
+                 alt="手游巴士" title="手游巴士"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.77l.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111555645.jpg"
+                 alt="齐齐乐" title="齐齐乐"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.maoren8.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111515310.png"
+                 alt="猫人游戏" title="猫人游戏"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.d1758.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111456997.jpg"
+                 alt="打茄子手游网" title="打茄子手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.18touch.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111422810.jpg"
+                 alt="超好玩" title="超好玩"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.candou.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111354124.jpg"
+                 alt="蚕豆网" title="蚕豆网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.8uka.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111329819.jpg"
+                 alt="巴游网" title="巴游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.yoyojie.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111306851.jpg"
+                 alt="YOYO手游" title="YOYO手游"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.97973.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111247634.png"
+                 alt="97973" title="97973"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.78793.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111227548.jpg"
+                 alt="78793" title="78793"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.91game.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111123287.jpg"
+                 alt="91手游网" title="91手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.87g.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918111049588.jpg"
+                 alt="87g手游网" title="87g手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.72g.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918021821860.jpg"
+                 alt="72g" title="72g"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.5g.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0918/20140918110945713.jpg"
+                 alt="5G" title="5G"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.diyiyou.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0905/20140905035635898.jpg"
+                 alt="第一手游" title="第一手游"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.gamedog.cn/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0905/20140905035551965.jpg"
+                 alt="游戏狗" title="游戏狗"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://news.4399.com/qbpkq/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0904/20140904030929201.png"
+                 alt="4399" title="4399"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.365mo.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0825/20140825024059955.jpg"
+                 alt="摸摸手游帮" title="摸摸手游帮"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.juxia.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0821/20140821033834582.jpg"
+                 alt="聚侠网" title="聚侠网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://shouji.tgbus.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0725/20140725044827276.jpg"
+                 alt="电玩巴士" title="电玩巴士"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.youxiduo.com" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0725/20140725044141682.png"
+                 alt="游戏多" title="游戏多"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.shouyou.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0725/20140725044038882.png"
+                 alt="手游网" title="手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.18183.com" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0725/20140725043840174.png"
+                 alt="18183手游网" title="18183手游网"  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			            <a href="http://www.ptbus.com/" target="_blank"><img src="http://p.skymoons.com/uploadfile/2014/0725/20140725043706201.jpg"
+                 alt="口袋巴士http:  www ptbus com " title="口袋巴士http:  www ptbus com "  style="width:120px;height:45px;margin-left:12px;margin-top:5px;*margin-top:3px;float:left;"/></a>
+                 
+			                        </div>
+    </div>
+</div>
+<script type="text/javascript">
+	var Marquee1 = new Marquee("friend_link"); 
+	Marquee1.Direction = "top";
+	Marquee1.Step = 3;
+	Marquee1.Width = 280;
+	Marquee1.Height = 280;
+	Marquee1.Timer = 200;
+	Marquee1.DelayTime = 0;
+	Marquee1.WaitTime = 0;
+	Marquee1.ScrollStep = 52;
+	Marquee1.Start();
+</script>
+
+        </div>
+        <div style="heigth:10px;"></div>
+		﻿ 
+<div id="footer" class="c-af">
+    <div id="footer_tip">
+        <span class="tip_title">皮卡丘健康游戏公告：</span>抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
+    </div>
+   
+</div>
+	<p style="margin-bottom:20px;">Copyright&copy;2013-2014 成都天象互动科技有限公司 All Rights Reserved.</p>
+    </div><div style="display:none;"><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1bf4577dcc684cdfdea5afc4cf85a3e0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+</body>
+</html>
+ 
+  <script type="text/javascript">
+		$(function(){
+	var $w=$("#jdtList li").width();
+	var len=$("#jdtList li").length;
+	var timer=null;
+	var _index=0;
+	//alert(len)
+	//alert($w)
+	$("#jdtList").width($w*len);
+	$("#jdtBtn li").mouseover(function(){
+		_index=$(this).index();
+		//alert(_index)
+		$(this).addClass("avtive").siblings("li").removeClass("avtive");
+		$("#jdtBtn").find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_3.png");
+		$(this).find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_1.png");
+
+		tabIndex(_index);
+	}).eq(0).mouseover();
+	
+	$(".jdt").hover(function(){
+		clearInterval(timer);	
+	},function(){
+		timer=setInterval(function(){
+			tabIndex(_index);
+			_index++;
+			if(_index==len){
+				_index=0;
+			}		
+		},3000)
+	}).trigger("mouseleave");
+	
+	function tabIndex(_index){
+		$("#jdtList").stop().animate({"left":-_index*$w},1000);
+		$("#jdtBtn li").eq(_index).addClass("avtive").siblings("li").removeClass("avtive");
+		$("#jdtBtn").find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_3.png");
+		$("#jdtBtn li").eq(_index).find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_1.png");
+	}
+})
+
+</script>

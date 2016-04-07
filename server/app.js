@@ -15,9 +15,9 @@ const interceptor  = require('./helpers').interceptor;
 
 function uploadMake(dirName) {
     const opts = multer.diskStorage({
-        "destination": (req, file, cb)=> {cb(null, 'server/upload/' + dirName)},
+        "destination": (req, file, cb)=> {cb(null, 'output/images/' + dirName)},
         "filename": (req, file, cb)=> {
-            cb(null, file.fieldname + '-' + Date.now() + '.' + file.originalname.split('.').reverse()[0])
+            cb(null, dirName + '_' + Date.now() + '.' + file.originalname.split('.').reverse()[0])
         }
     });
     return multer({storage: opts});
@@ -25,7 +25,7 @@ function uploadMake(dirName) {
 function uploadImgRes(req, res, key) {
     res.status(200).type('html').send({
         "state": "SUCCESS",
-        "url": key + "/" + req.file.filename,
+        "url": 'images/' + key + "/" + req.file.filename,
         "name": req.file.filename,
         "originalName": req.file.originalname,
         "size": req.file.size,
@@ -37,6 +37,7 @@ function uploadImgRes(req, res, key) {
 const upload         = uploadMake('images');
 const uploadActivity = uploadMake('activity');
 const uploadLinks    = uploadMake('links');
+const uploadInfo     = uploadMake('info');
 const app            = express();
 
 // view engine setup
@@ -55,20 +56,21 @@ app.all('*', interceptor);
 app.use('/', routes.Inits);
 app.use('/auth', routes.Auth);
 app.use('/news', routes.News);
-app.use('/strategy',routes.Strategy);
+app.use('/strategy', routes.Strategy);
 app.use('/activity', routes.Activity);
 app.use('/links', routes.Links);
-app.use('/info',routes.Info);
+app.use('/info', routes.Info);
 
 
 //for umeditor
 app.post('/upload', upload.single('upfile'), (req, res)=> uploadImgRes(req, res, 'images'));
 app.post('/upload/activity', uploadActivity.single('file'), (req, res)=> uploadImgRes(req, res, 'activity'));
 app.post('/upload/links', uploadLinks.single('file'), (req, res)=> uploadImgRes(req, res, 'links'));
-app.post('/upload/info', uploadLinks.single('file'), (req, res)=> uploadImgRes(req, res, 'info'));
+app.post('/upload/info', uploadInfo.single('file'), (req, res)=> uploadImgRes(req, res, 'info'));
 
 app.use(express.static(path.resolve('client/dist/')));
 app.use(express.static(path.resolve('server/upload/')));
+app.use(express.static(path.resolve('output/')));
 // catch 404 and forward to error handler
 app.use((req, res, next)=> {
     const err  = new Error('Not Found');

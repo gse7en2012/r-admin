@@ -10,7 +10,9 @@ module.exports = (seq, DataType)=> {
         title: {type: DataType.TEXT},
         author: {type: DataType.TEXT},
         content: {type: DataType.TEXT},
-        uid:{type:DataType.INTEGER}
+        uid:{type:DataType.INTEGER},
+        s_link:{type: DataType.TEXT,comment:'静态路径'},
+        custom_link:{type: DataType.TEXT,comment:'自定义静态路径'},
     }, {
         timestamps: true,
         comment: '新闻'

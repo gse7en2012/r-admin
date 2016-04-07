@@ -9,5 +9,14 @@ const api     = require('../../api');
 
 authRouter.post('/login', api.AuthApi.loginAdminUserIF);
 
+authRouter.get('/check/master',api.AuthApi.checkMasterIF);
+
+authRouter.get('/user/list',api.AuthApi.getUsersListIF);
+
+authRouter.post('/user/ban',api.AuthApi.banAccountIF);
+
+authRouter.post('/user/add',api.AuthApi.generateAdminUserIF);
+
+authRouter.post('/user/update',api.AuthApi.updateAccountPasswordIF);
 
 module.exports=authRouter;

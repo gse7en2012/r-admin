@@ -1,0 +1,39 @@
+<div data-ng-controller="UsersCtrl">
+    <div class="row">
+        <div class="col-xs-12 col-lg-1 col-md-2">
+            <a href="#/user/add" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span>添加用户</a>
+        </div>
+    </div>
+
+    <div class="col-lg-12" id="no-more-tables">
+        <table class="table table-striped ">
+            <thead class="cf">
+            <tr>
+                <th>用户ID</th>
+                <th>用户名</th>
+                <th>最后登录时间</th>
+                <th>创建时间</th>
+                <th>权限</th>
+                <th>当前状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="data in dataList">
+                <th>{{data.uid}}</th>
+                <td>{{data.name}}</td>
+                <td>{{data.login_time}}</td>
+                <td>{{data.createdAt}}</td>
+                <td><span></span>{{data.permissions==1?'超级管理员':'普通管理员'}}</td>
+                <td><span ng-class="{'text-danger':data.is_ban==1}">{{data.is_ban==1?'禁用':'正常'}}</span></td>
+                <td>
+                    <a href="javasrcipt:;" class="edit-btn" ng-click="change(data.uid,data.name)"><span class="fa fa-edit"></span>修改密码</a>
+                    <a href="javascript:;" class="del-btn" ng-click="delete(data.uid,data.is_ban)"><span ng-class="{fa:true, 'fa-ban':data.is_ban==0,'fa-check':data.is_ban==1,'text-danger':data.is_ban==0}">{{data.is_ban==1?'启用':'禁用'}}</span></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+    </div>
+</div>

@@ -7,7 +7,7 @@
 const moment        = require('moment');
 const DataBaseModel = require('../../model');
 const _             = require('underscore');
-
+const logAction     = require('../../helpers').logAction;
 
 
 const $linksHelper = {

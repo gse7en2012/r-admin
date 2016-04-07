@@ -1,0 +1,28 @@
+{{#news}}
+    <div class="news_list_item">
+
+        <div class="news_thumb">
+            <a href="{{s_link}}">
+                {{#image}}
+                    <img src="{{image}}" alt="{{title}}" style="width:200px;height:118px;"/>
+                {{/image}}
+                {{^image}}
+                    <img src="http://localhost/images/upfile-1459750376627.png" alt="{{title}}"
+                         style="width:200px;height:118px;"/>
+                {{/image}}
+            </a>
+        </div>
+
+        <p style="*width:470px;">
+            <span class="news_title"><a href="{{s_link}}"
+                                        title="欢乐更新送福利，海量豪礼爽不停">{{title}}</a></span>
+            <span class="news_time">[{{date}}]</span>
+        </p>
+
+        <p class="news_brief" style="margin-top:5px;*width:470px;">
+            {{pre}} </p>
+
+        <p style="*width:470px;"><a href="{{s_link}}}" title="比卡丘详情" class="line_c">查看详情>></a>
+        </p>
+    </div>
+{{/news}}

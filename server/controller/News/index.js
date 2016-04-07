@@ -7,11 +7,20 @@
 const moment        = require('moment');
 const DataBaseModel = require('../../model');
 const _             = require('underscore');
+const htmlToText    = require('html-to-text');
+const logAction     = require('../../helpers').logAction;
 
-
+//const Staticize = require('../../comm/Staticize');
 
 const $newsHelper = {
     format(data, page){
+        function getFirstImage(htmlString) {
+            const re      = /<img[^>]+src="?([^"\s]+)"?[^>]*\/>/g;
+            const results = re.exec(htmlString);
+            if (results)  return results[1];
+            return false;
+        }
+
         const r = [], defaultPage = 1, defaultCount = data.length;
         data.rows.forEach((item)=> {
             r.push({
@@ -19,7 +28,15 @@ const $newsHelper = {
                 createdAt: moment(item.createdAt).format('YYYY-MM-DD HH:mm:ss'),
                 news_id: item.news_id,
                 title: item.title,
-                author: item.author
+                author: item.author,
+                s_link:item.custom_link||item.s_link,
+                custom_link:item.custom_link,
+                pre: htmlToText.fromString(item.content, {
+                    wordwrap: 0,
+                    ignoreHref: true,
+                    ignoreImage: true
+                }).slice(0, 100).replace(/\n/g,'').replace(/ /g,''),
+                image: getFirstImage(item.content)
             });
         });
         return {
@@ -32,16 +49,16 @@ const $newsHelper = {
 
 
 const NewsController = {
-    getNewsList(page){
+    getNewsList(page, pageS){
         if (!page || _.isNaN(Number(page))) return Promise.reject('参数错误!');
         const dPage    = page < 1 ? 1 : Number(page);
-        const pageSize = 30;
+        const pageSize = pageS || 30;
         return DataBaseModel.News.findAndCountAll({
             offset: (dPage - 1) * pageSize,
             limit: pageSize,
             order: 'news_id DESC'
-        }).then((data)=>{
-            return $newsHelper.format(data,page)
+        }).then((data)=> {
+            return $newsHelper.format(data, page)
         })
     },
     getNewsDetails(newsId){
@@ -58,47 +75,43 @@ const NewsController = {
         }).then($newsHelper.format)
     },
     addNews(news){
-        const newsInstance=DataBaseModel.News.build({
-            title:news.title,
-            author:news.author,
-            uid:news.uid,
-            date:news.date||new Date(),
-            content:news.content
+        const Staticize = require('../../comm/Staticize');
+        const newsInstance = DataBaseModel.News.build({
+            title: news.title,
+            author: news.author,
+            uid: news.uid,
+            date: news.date || new Date(),
+            custom_link:news.custom_link,
+            content: news.content
         });
-        return newsInstance.save();
+        return newsInstance.save().then((newsD)=> {
+            newsInstance.date=moment(newsInstance.date).format('YYYY-MM-DD HH:mm:ss');
+            newsInstance.pre=htmlToText.fromString(news.content, {
+                wordwrap: 0,
+                ignoreHref: true,
+                ignoreImage: true
+            }).slice(0, 100).replace(/\n/g,'').replace(/ /g,'');
+            Staticize.compileInsidePage('news', newsD.news_id, newsInstance).then((r)=> {
+                newsD.s_link = r;
+                newsD.save().then(Staticize.compileNews);
+            });
+
+            return newsInstance;
+        });
     },
     deleteNews(newsId){
+        const Staticize = require('../../comm/Staticize');
         return DataBaseModel.News.find({
-            where:{news_id:newsId}
-        }).then((news)=>{
-            return news.destroy();
+            where: {news_id: newsId}
+        }).then((news)=> {
+            return news.destroy().then(Staticize.compileNews);
         })
     },
     editNews(news){
-        return DataBaseModel.News.update(news,{
-            where:{news_id:news.news_id}
+        return DataBaseModel.News.update(news, {
+            where: {news_id: news.news_id}
         }).then(()=>news)
     }
 };
 
-
-//NewsController.getNewsList(1).then((r)=> {console.log(r);});
-//NewsController.addNews({
-//    title:'股票大涨',
-//    author:'股市大涨',
-//    uid:2,
-//    date:new Date()
-//}).then((r)=>{
-//    console.log(r);
-//})
-function tester(promise){
-    promise.then(r=>{console.log(r);})
-}
-//tester(NewsController.searchNews('测试'));
-//tester(NewsController.deleteNews(4));
-//tester(NewsController.editNews({
-//    news_id:1,
-//    title:'不要用这样',
-//    author:'啊起'
-//}));
 module.exports = NewsController;

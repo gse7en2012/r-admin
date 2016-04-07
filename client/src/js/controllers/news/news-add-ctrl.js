@@ -25,6 +25,7 @@ function NewsAddCtrl($scope, $cookieStore, newsApiService) {
             author:$scope.author,
             uid:1,
             date:new Date(),
+            custom_link:$scope.custom_link,
             content:$scope.content
         }).then(()=>{
             alert('发布成功!');

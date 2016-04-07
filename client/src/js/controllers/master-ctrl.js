@@ -53,6 +53,13 @@ function MasterCtrl($scope, $cookieStore, $http, $state) {
     };
     $scope.name       = $cookieStore.get('radmin_name');
 
+    var uid=$cookieStore.get('radmin_id');
+    $http.get('/auth/check/master?uid='+uid).success(function(data){
+        if(data.result==1){
+            $scope.isMasterAdmin=true;
+        }
+    });
+
 
     window.onresize = function () {
         $scope.$apply();

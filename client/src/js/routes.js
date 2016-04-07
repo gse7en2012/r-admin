@@ -82,6 +82,18 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('infoArtEdit', {
                 url: '/info/edit/:art_id',
                 templateUrl: 'templates/info/infoArtEdit.html'
-            });;
+            })
+            .state('user', {
+                url: '/user',
+                templateUrl: 'templates/user/usersList.html'
+            })
+            .state('userEdit', {
+                url: '/user/edit/:uid',
+                templateUrl: 'templates/user/usersEdit.html'
+            })
+            .state('userAdd', {
+                url: '/user/add',
+                templateUrl: 'templates/user/usersAdd.html'
+            });
     }
 ]);
