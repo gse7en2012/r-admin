@@ -104,6 +104,7 @@ const NewsController = {
                 });
                 Staticize.deleteFile(news.s_link);
                 Staticize.compileNews();
+                NewsController.generateNewListPage(); //render newslist
                 return true;
             });
         })
@@ -126,6 +127,7 @@ const NewsController = {
             'SELECT A.* FROM ( ( SELECT * FROM news WHERE news_id < ? ORDER BY news_id DESC LIMIT 1 ) UNION ( SELECT * FROM news WHERE news_id> ? ORDER BY news_id ASC LIMIT 1 ) ) as A ORDER BY A.news_id',
             {replacements: [news.news_id, news.news_id], type: 'SELECT'}
         ).then(r=> {
+            news.dataValues.title_desc="新闻详情";
             news.dataValues.date = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
             news.dataValues.pre  = htmlToText.fromString(news.content, {
                 wordwrap: 0,
@@ -157,6 +159,7 @@ const NewsController = {
     generateStaticPageById(newsId){
         const Staticize = require('../../comm/Staticize');
         DataBaseModel.News.findById(newsId).then((news)=> {
+            news.dataValues.title_desc="新闻详情";
             news.dataValues.date = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
             news.dataValues.pre  = htmlToText.fromString(news.content, {
                 wordwrap: 0,

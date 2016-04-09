@@ -14,6 +14,7 @@
 }
 
 #goTopBtn {
+    z-index: 9999;
     POSITION: fixed;
     TEXT-ALIGN: center;
     LINE-HEIGHT: 30px;
@@ -77,7 +78,7 @@ img {border:none}
 }
 
 
-#banner .index a :hover,#banner .index .cur {
+#banner .index a :hover,#banner .index.cur {
     background: url(../images/btn_top_link_index_hover.png?v=20150815);
 }
 
@@ -86,7 +87,7 @@ img {border:none}
 }
 
 
-#banner .news a :hover,#banner .news .cur {
+#banner .news a :hover,#banner .news.cur {
     background: url(../images/btn_top_link_news_hover.png?v=20150815);
 }
 
@@ -95,7 +96,7 @@ img {border:none}
     background: url(../images/btn_top_link_bbs_normal.png?v=201508);
 }
 
-#banner .bbs a :hover ,#banner .bbs .cur {
+#banner .bbs a :hover ,#banner .bbs.cur {
     background: url(../images/btn_top_link_bbs_hover.png?v=20150815);
 }
 
@@ -103,7 +104,7 @@ img {border:none}
     background: url(../images/btn_top_link_activity_normal.png?v=201508);
 }
 
-#banner .activity a :hover,#banner .activity .cur  {
+#banner .activity a :hover,#banner .activity.cur  {
     background: url(../images/btn_top_link_activity_hover.png?v=20150815);
 }
 
@@ -285,7 +286,7 @@ img {border:none}
 }
 .inbox .libao_in .btn1{ background:url(../images/lbnn.png) no-repeat; width:199px; height:52px; cursor:pointer; margin:0 auto; margin:27px 2px 25px 37px; display:block;}
 .inbox .libao_in .input{ width:217px; height:43px; padding-left: 10px; line-height:43px;}
-.inbox .libao_in .btn2{ width:45px; height:24px; cursor:pointer; margin:10px; margin-bottom:}
+.inbox .libao_in .btn2{ width:45px; height:24px; cursor:pointer; margin:10px; }
 
 .list_item{
     border-bottom: 1px dashed #a9a9a9;
@@ -517,7 +518,6 @@ img {border:none}
     width: 280px ;
     *width: 260px ;
     height: 343px ;
-    *+height: 278px;
     padding-top: 27px;
     padding-left: 10px;
     padding-right: 10px;
@@ -624,6 +624,7 @@ img {border:none}
 #right_item_yxzl dd div img {
     margin-right: 5px;
     float: left;
+    width: 20px;
 }
 
 
@@ -640,7 +641,7 @@ img {border:none}
 }
 
 #right_item_yxzl dd a:hover {
-    background: #39841f;
+    background: rgb(53,143,175);
 }
 
 

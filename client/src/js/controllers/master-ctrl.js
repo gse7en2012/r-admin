@@ -71,7 +71,13 @@ function MasterCtrl($scope, $cookieStore, $http, $state,usersApiService) {
         }).then(()=> {
             alert('操作成功');
         })
-    }
+    };
+
+    $scope.refreshPage=function(){
+        $http.get('/auth/refresh').success(function(data){
+            alert('刷新成功!');
+        });
+    };
 
     window.onresize = function () {
         $scope.$apply();

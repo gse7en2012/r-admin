@@ -6,6 +6,7 @@
 
 const Controller = require('../controller');
 const Helpers    = require('../helpers');
+const Staticize = require('../comm/Staticize');
 const fs         = require('fs');
 const path=require('path');
 
@@ -37,6 +38,10 @@ const AuthApi = {
         res.clearCookie('radmin_name');
         res.clearCookie('radmin_id');
         res.redirect('/');
+    },
+    refreshIF(req,res){
+        Staticize.compileIndex();
+        res.send(200);
     },
     generateAdminUserIF(req,res){
         const username = req.body.username;

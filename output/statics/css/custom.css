@@ -74,7 +74,12 @@ body a,body a:visited,.crumbs a,.crumbs a:visited{
     margin-left: 0;
     width: auto;margin-left: 0;margin-top: 0;
 }
-.page_content #news_list_title{width: 730px;margin-top: -25px;}
+.page_content #news_list_title{width: 730px;margin-top: -25px;text-align: left;
+    line-height: 102px;
+    font-size: 24px;
+    text-indent: 15px;
+    color: #36a9d3;
+}
 
 #main_content.page_content #main_left #news_list{padding-left: 0;}
 

@@ -98,9 +98,14 @@ const StrategyController = {
         })
     },
     editStrategy(strategy){
+        const Staticize = require('../../comm/Staticize');
         return DataBaseModel.Strategy.update(strategy,{
             where:{strategy_id:strategy.strategy_id}
-        }).then(()=>strategy)
+        }).then(()=>{
+            Staticize.compileStrategy();
+            StrategyController.generateStaticPageById(strategy.strategy_id);
+            return strategy;
+        })
     },
     generateStaticPage(strategy){
         const Staticize = require('../../comm/Staticize');
@@ -109,6 +114,7 @@ const StrategyController = {
             'SELECT A.* FROM ( ( SELECT * FROM strategy WHERE strategy_id < ? ORDER BY strategy_id DESC LIMIT 1 ) UNION ( SELECT * FROM strategy WHERE strategy_id> ? ORDER BY strategy_id ASC LIMIT 1 ) ) as A ORDER BY A.strategy_id',
             {replacements: [strategy.strategy_id, strategy.strategy_id], type: 'SELECT'}
         ).then(r=> {
+            strategy.dataValues.title_desc="攻略详情";
             strategy.dataValues.date = moment(strategy.date).format('YYYY-MM-DD HH:mm:ss');
             strategy.dataValues.pre  = htmlToText.fromString(strategy.content, {
                 wordwrap: 0,
@@ -139,6 +145,7 @@ const StrategyController = {
     generateStaticPageById(strategyId){
         const Staticize = require('../../comm/Staticize');
         DataBaseModel.Strategy.findById(strategyId).then((strategy)=> {
+            strategy.dataValues.title_desc="攻略详情";
             strategy.dataValues.date = moment(strategy.date).format('YYYY-MM-DD HH:mm:ss');
             strategy.dataValues.pre  = htmlToText.fromString(strategy.content, {
                 wordwrap: 0,

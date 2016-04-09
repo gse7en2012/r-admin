@@ -126,6 +126,7 @@ const NewsActController = {
             'SELECT A.* FROM ( ( SELECT * FROM news_act WHERE news_act_id < ? ORDER BY news_act_id DESC LIMIT 1 ) UNION ( SELECT * FROM news_act WHERE news_act_id> ? ORDER BY news_act_id ASC LIMIT 1 ) ) as A ORDER BY A.news_act_id',
             {replacements: [news.news_act_id, news.news_act_id], type: 'SELECT'}
         ).then(r=> {
+            news.dataValues.title_desc="活动详情";
             news.dataValues.date = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
             news.dataValues.pre  = htmlToText.fromString(news.content, {
                 wordwrap: 0,
@@ -158,6 +159,7 @@ const NewsActController = {
         const Staticize = require('../../comm/Staticize');
         DataBaseModel.NewsAct.findById(newsId).then((news)=> {
             if(!news||!news.dataValues) return;
+            news.dataValues.title_desc="活动详情";
             news.dataValues.date = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
             news.dataValues.pre  = htmlToText.fromString(news.content, {
                 wordwrap: 0,

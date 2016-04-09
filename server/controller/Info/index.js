@@ -88,10 +88,13 @@ const InfoController = {
         });
     },
     editChannelArt(art){
+        const Staticize = require('../../comm/Staticize');
         return DataBaseModel.ChannelArt.update(art, {
             where: {art_id: art.art_id}
-        }).then((artD)=>{
-            InfoController.generateStaticPage(artD);
+        }).then(()=>{
+            console.log(InfoController,art.art_id);
+            InfoController.generateStaticPageById(art.art_id);
+            Staticize.compileInfo();
             return art;
         })
     },
@@ -174,14 +177,28 @@ const InfoController = {
     },
     generateStaticPage(info){
         const Staticize = require('../../comm/Staticize');
-        info.dataValues.date = moment(info.createdAt).format('YYYY-MM-DD HH:mm:ss');
-        info.dataValues.title_desc='游戏资料';
+        info.date = moment(info.createdAt).format('YYYY-MM-DD HH:mm:ss');
+        info.title_desc='游戏资料';
         Staticize.compileInsidePage('info', info.art_id, info).then((r)=> {
             info.s_link = r;
             info.save().then(()=> {
                 Staticize.compileInfo();
             });
         });
+    },
+    generateStaticPageById(infoId){
+        const Staticize = require('../../comm/Staticize');
+        return DataBaseModel.ChannelArt.findById(infoId).then((info)=>{
+            info=info.dataValues;
+            info.date = moment(info.createdAt).format('YYYY-MM-DD HH:mm:ss');
+            info.title_desc='游戏资料';
+            Staticize.compileInsidePage('info', info.art_id, info).then((r)=> {
+                info.s_link = r;
+                info.save().then(()=> {
+                    Staticize.compileInfo();
+                });
+            });
+        })
     }
 };
 

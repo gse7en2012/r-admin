@@ -150,7 +150,6 @@ const StaticizeController = {
     }
 };
 
-StaticizeController.deleteFile('/strategy/16/04/09/8.html');
 
 
 module.exports = StaticizeController;
