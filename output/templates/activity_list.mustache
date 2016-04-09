@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
+    <title>{{title}} - 宁静海手游官网</title>
+    <meta name="keywords" content="海量,福利">
+    <meta name="description" content="{{pre}}">
+    <link href="{{resLocation}}/statics/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="{{resLocation}}/statics/css/custom.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="{{resLocation}}/statics/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{resLocation}}/statics/js/jquery.sgallery.js"></script>
+    <script type="text/javascript" src="{{resLocation}}/statics/js/scroll.js"></script>
+    <script type="text/javascript" src="{{resLocation}}/statics/js/index.js"></script>
+</head>
+<body>
+<div id="main">
+    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="{{resLocation}}/statics/images/back_top.png" alt="返回顶部"></div>
+
+    <div id="head_top">
+        <div id="banner">
+            <ul class="c-af ">
+                <li class="split_01"></li>
+                <li class="index">
+                    <a href="/index.html">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+                <li class="news">
+                    <a href="/news/index.html">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+                <li>
+                    <div style="width:351px;height:162px;"></div>
+                </li>
+                <li class="split_01"></li>
+                <li class="bbs">
+                    <a href="javascript:void(0);" onClick="alert('暂未开启，敬请期待...');">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+                <li class="activity">
+                    <a href="/activity/index.html" class="cur">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+            </ul>
+        </div>
+        <div id="top_download">
+            <ul>
+                <li class="app">
+                    <a href="/index.php?m=content&c=downGame&a=ios" title="IOS正版下载">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="ios">
+                    <a href="/index.php?m=content&c=downGame&a=pios" target="_blank" title="越狱下载">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="android">
+                    <a href="/index.php?m=content&c=downGame&a=andro" title="安卓下载">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="computer">
+                    <a href="/index.php?m=content&c=downGame&a=win">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="main_content" class="page_content">
+        <div id="main_left">
+            <div id="news_list">
+                <div id="news_list_title" style=" margin-top:-80px;*margin-top:-30px;">
+                    <img src="{{resLocation}}/statics/images/news_list_title.png" style="float: left;margin-top: 35px;margin-left: 10px"/>
+                </div>
+                <div id="list_content">
+                    {{#news_list}}
+                    <div class="list_item">
+                        <p>
+                            <span class="list_title">
+                                <a href="{{s_link}}" title="{{title}}">{{title}}</a>
+                            </span>
+                            <span class="news_time">[{{date}}]</span>
+                        </p>
+
+                        <p class="list_brief" style="margin-top:5px;">
+                            {{pre}}
+                            <a href="{{s_link}}"  class="list_c">查看详情>></a>
+                        </p>
+                    </div>
+                    {{/news_list}}
+                    <div class="pages">
+                        <a class="a1">{{total}}条</a>
+                        {{#prevShow?}}
+                            <a href="{{firstLink}}">首页</a>
+                        <a href="{{prevLink}}" class="a1">上一页</a>
+
+                        {{/prevShow?}}
+
+                        <span>{{ind}}</span>
+
+                        {{#nextShow?}}
+
+                        <a href="{{nextLink}}" class="a1">下一页</a>
+                            <a href="{{lastLink}}">末页</a>
+                        {{/nextShow?}}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="main_right">
+
+            <div id="qr_box">
+                <img src='{{resLocation}}/statics/images/qrcode.jpg'>
+            </div>
+            <div class="right_item_box">
+
+                <!--#include file="/views/strategy.html" -->
+
+                <!--#include file="/views/links.html" -->
+            </div>
+        </div>
+        <script type="text/javascript">
+            var Marquee1 = new Marquee("friend_link");
+            Marquee1.Direction = "top";
+            Marquee1.Step = 3;
+            Marquee1.Width = 280;
+            Marquee1.Height = 280;
+            Marquee1.Timer = 200;
+            Marquee1.DelayTime = 0;
+            Marquee1.WaitTime = 0;
+            Marquee1.ScrollStep = 52;
+            Marquee1.Start();
+        </script>
+    </div>
+    ﻿
+    <div id="footer" class="c-af">
+        <div id="footer_tip">
+            <span class="tip_title">宁静海健康游戏公告：</span>抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
+        </div>
+    </div>
+    <p style="margin-bottom:20px;color:#d6d6d6;">Copyright&copy;2014-2016 广州宁静海信息科技有限公司 All Rights Reserved.</p>
+</div>
+</body>
+</html>
+

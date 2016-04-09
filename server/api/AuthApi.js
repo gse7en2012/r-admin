@@ -7,6 +7,7 @@
 const Controller = require('../controller');
 const Helpers    = require('../helpers');
 const fs         = require('fs');
+const path=require('path');
 
 const AuthApi = {
     loginAdminUserIF(req, res){
@@ -30,6 +31,12 @@ const AuthApi = {
                     message: e
                 })
             })
+    },
+    logoutIF(req,res){
+        res.clearCookie('radmin_token');
+        res.clearCookie('radmin_name');
+        res.clearCookie('radmin_id');
+        res.redirect('/');
     },
     generateAdminUserIF(req,res){
         const username = req.body.username;

@@ -48,7 +48,10 @@
                 <a href="#/news" ng-click="setNavName($event)" >新闻管理<span class="menu-icon fa fa-list"></span></a>
             </li>
             <li class="sidebar-list">
-                <a href="#/activity" ng-click="setNavName($event)">活动管理<span class="menu-icon fa fa-image"></span></a>
+                <a href="#/news_act" ng-click="setNavName($event)">活动管理<span class="menu-icon fa fa-image"></span></a>
+            </li>
+            <li class="sidebar-list">
+                <a href="#/activity" ng-click="setNavName($event)">轮播管理<span class="menu-icon fa fa-image"></span></a>
             </li>
             <li class="sidebar-list">
                 <a href="#/strategy" ng-click="setNavName($event)">攻略管理 <span class="menu-icon fa fa-file-word-o"></span></a>
@@ -89,7 +92,7 @@
                                 </li>
                                 <li class="divider"></li>
                                 <li class="link">
-                                    <a href="#">
+                                    <a ng-click="changePassword()">
                                         修改密码
                                     </a>
                                 </li>

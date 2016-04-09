@@ -19,10 +19,6 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/news',
                 templateUrl: 'templates/news/newsList.html'
             })
-            //.state('news.list',{
-            //    url:'/list',
-            //    templateUrl:'templates/news.list.html'
-            //})
             .state('newsAdd', {
                 url: '/news/add',
                 templateUrl: 'templates/news/newsAdd.html'
@@ -30,6 +26,18 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('newsEdit', {
                 url: '/news/edit/:news_id',
                 templateUrl: 'templates/news/newsEdit.html'
+            })
+            .state('newsact', {
+                url: '/news_act',
+                templateUrl: 'templates/news_act/newsList.html'
+            })
+            .state('newsactAdd', {
+                url: '/news_act/add',
+                templateUrl: 'templates/news_act/newsAdd.html'
+            })
+            .state('newsactEdit', {
+                url: '/news_act/edit/:news_id',
+                templateUrl: 'templates/news_act/newsEdit.html'
             })
             .state('strategy', {
                 url: '/strategy',

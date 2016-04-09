@@ -11,7 +11,8 @@ module.exports = (seq, DataType)=> {
         author: {type: DataType.TEXT},
         content: {type: DataType.TEXT},
         uid:{type:DataType.INTEGER},
-        s_link:{type: DataType.TEXT}
+        s_link:{type: DataType.TEXT},
+        custom_link:{type:DataType.TEXT}
     }, {
         timestamps: true,
         comment: '攻略'

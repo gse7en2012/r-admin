@@ -20,6 +20,9 @@
             padding: 15px;
             margin: 0 auto;
         }
+        body{
+            font-family: "microsoft yahei";
+        }
     </style>
 </head>
 <body>
@@ -42,6 +45,14 @@
                 if (data.code != 200) return alert(data.message);
                 location.href = data.redirectUrl
             })
+        })
+
+        $(document).keypress(function(e){
+            if(e.which==13){
+                if(!$('#username').val()) return alert('请输入用户名');
+                if(!$('#inputPassword').val()) return alert('请输入密码')
+                $('#login').trigger('click');
+            }
         })
     </script>
 

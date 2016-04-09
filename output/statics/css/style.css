@@ -73,11 +73,11 @@ img {border:none}
 }
 
 #banner .index {
-    background: url(../images/btn_top_link_index_hover.png?v=201508);
+    background: url(../images/btn_top_link_index_normal.png?v=201508);
 }
 
 
-#banner .index a :hover {
+#banner .index a :hover,#banner .index .cur {
     background: url(../images/btn_top_link_index_hover.png?v=20150815);
 }
 
@@ -86,7 +86,7 @@ img {border:none}
 }
 
 
-#banner .news a :hover {
+#banner .news a :hover,#banner .news .cur {
     background: url(../images/btn_top_link_news_hover.png?v=20150815);
 }
 
@@ -95,7 +95,7 @@ img {border:none}
     background: url(../images/btn_top_link_bbs_normal.png?v=201508);
 }
 
-#banner .bbs a :hover {
+#banner .bbs a :hover ,#banner .bbs .cur {
     background: url(../images/btn_top_link_bbs_hover.png?v=20150815);
 }
 
@@ -103,7 +103,7 @@ img {border:none}
     background: url(../images/btn_top_link_activity_normal.png?v=201508);
 }
 
-#banner .activity a :hover {
+#banner .activity a :hover,#banner .activity .cur  {
     background: url(../images/btn_top_link_activity_hover.png?v=20150815);
 }
 

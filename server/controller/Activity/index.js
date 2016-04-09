@@ -63,15 +63,20 @@ const ActivityController = {
             is_show: activity.is_show
         });
         return newsInstance.save().then(()=>{
-            Staticize.compileActivity();
+            Staticize.compileCarousel();
+            return newsInstance;
         });
     },
     deleteActivity(activityId){
+        const Staticize = require('../../comm/Staticize');
         return DataBaseModel.Activity.find({
             where: {activity_id: activityId}
         }).then((activity)=> {
             activity.is_show = 0;
-            return activity.save();
+            return activity.save().then(()=>{
+                Staticize.compileCarousel();
+                return activity;
+            });
         })
     },
     openActivity(activityId){

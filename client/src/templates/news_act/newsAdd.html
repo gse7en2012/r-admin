@@ -1,0 +1,51 @@
+<div ng-controller="NewsActAddCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="title" class="col-sm-1 control-label">活动标题</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="title" placeholder="活动标题" ng-model="title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="author" class="col-sm-1 control-label">活动作者</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="author" placeholder="活动作者" ng-model="author">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-1 control-label">发布时间</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="date" placeholder="发布时间" ng-model="date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="customlink" class="col-sm-1 control-label">自定义链接</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="customlink" placeholder="默认为该文章地址,如需指向其他链接,请填写此处,否则留空" ng-model="custom_link">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-1 control-label">活动内容</label>
+
+                    <div class="col-sm-9">
+                        <p class="alert-info">默认选用文章中第一幅图片作为列表的缩略图.</p>
+                        <div id="container"  config="ct" ng-model="content" lock-umeditor></div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <button ng-click="add()" class="btn btn-primary"><i class="fa fa-send-o"></i> 发布</button>
+                        <a class="btn btn-default" href='/#/news'><i class="fa fa-close"></i> 返回</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

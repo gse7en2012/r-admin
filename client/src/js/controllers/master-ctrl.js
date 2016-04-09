@@ -3,9 +3,9 @@
  */
 
 angular.module('RDash')
-    .controller('MasterCtrl', ['$scope', '$cookieStore', '$http', '$state', MasterCtrl]);
+    .controller('MasterCtrl', ['$scope', '$cookieStore', '$http', '$state','usersApiService', MasterCtrl]);
 
-function MasterCtrl($scope, $cookieStore, $http, $state) {
+function MasterCtrl($scope, $cookieStore, $http, $state,usersApiService) {
     /**
      * Sidebar Toggle & Cookie Control
      */
@@ -60,6 +60,18 @@ function MasterCtrl($scope, $cookieStore, $http, $state) {
         }
     });
 
+
+
+    $scope.changePassword = function () {
+        const newPass = prompt('请输入' + $scope.name + '的新密码');
+        if (!newPass) return alert('请输入密码!');
+        usersApiService.updatedUserPassword({
+            uid: uid,
+            password: newPass
+        }).then(()=> {
+            alert('操作成功');
+        })
+    }
 
     window.onresize = function () {
         $scope.$apply();

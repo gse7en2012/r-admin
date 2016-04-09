@@ -9,6 +9,8 @@ const api     = require('../../api');
 
 authRouter.post('/login', api.AuthApi.loginAdminUserIF);
 
+authRouter.get('/logout', api.AuthApi.logoutIF);
+
 authRouter.get('/check/master',api.AuthApi.checkMasterIF);
 
 authRouter.get('/user/list',api.AuthApi.getUsersListIF);

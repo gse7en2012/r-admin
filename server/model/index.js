@@ -11,7 +11,7 @@ let mysqlConn = new Seq('radmin', 'root', 'shimen112', {
     host: '127.0.0.1',
     port: '3306',
     dialect: 'mysql',
-    logging: console.log,
+    logging: false && console.log,
     omitNull: true,
     maxConcurrentQueries: 150,
     define: {
@@ -46,6 +46,7 @@ const Links      = mysqlConn.import(__dirname + '/Links');
 const Logs       = mysqlConn.import(__dirname + '/Logs');
 const LoginLogs  = mysqlConn.import(__dirname + '/LoginLogs');
 const News       = mysqlConn.import(__dirname + '/News');
+const NewsAct    = mysqlConn.import(__dirname + '/NewsAct');
 const Strategy   = mysqlConn.import(__dirname + '/Strategy');
 const Users      = mysqlConn.import(__dirname + '/Users');
 const Channel    = mysqlConn.import(__dirname + '/Channel');
@@ -62,6 +63,7 @@ exports.Links      = Links;
 exports.Logs       = Logs;
 exports.LoginLogs  = LoginLogs;
 exports.News       = News;
+exports.NewsAct    = NewsAct;
 exports.Strategy   = Strategy;
 exports.Users      = Users;
 exports.Channel    = Channel;

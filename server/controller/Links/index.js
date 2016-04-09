@@ -51,6 +51,7 @@ const LinkController = {
         return DataBaseModel.Links.findById(linksId)
     },
     addLinks(link){
+        const Staticize = require('../../comm/Staticize');
         const linkInstance=DataBaseModel.Links.build({
             link_img:link.img,
             author:link.author,
@@ -58,19 +59,29 @@ const LinkController = {
             link_address:link.link_address,
             sort:link.sort
         });
-        return linkInstance.save();
+        return linkInstance.save().then(()=>{
+            Staticize.compileLinks();
+            return linkInstance;
+        });
     },
     deleteLinks(linkId){
+        const Staticize = require('../../comm/Staticize');
         return DataBaseModel.Links.find({
             where:{link_id:linkId}
         }).then((link)=>{
-            return link.destroy();
+            return link.destroy().then(()=>{
+                Staticize.compileLinks();
+                return true;
+            });
         })
     },
     editLink(link){
         return DataBaseModel.Links.update(link,{
             where:{link_id:link.link_id}
-        }).then(()=>link)
+        }).then(()=>{
+            Staticize.compileLinks();
+            return link
+        })
     }
 };
 

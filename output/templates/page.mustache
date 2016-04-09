@@ -15,8 +15,7 @@
 </head>
 <body>
 <div id="main">
-    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="http://p.skymoons.com/statics/images/pkq/top_1.png"
-                                                alt="返回皮卡丘官网顶部"></div>
+    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="{{resLocation}}/statics/images/back_top.png" alt="返回顶部"></div>
 
     <div id="head_top">
         <div id="banner">
@@ -29,13 +28,13 @@
                 </li>
                 <li class="split_01"></li>
                 <li class="news">
-                    <a href="/newslist/index.html">
+                    <a href="/news">
                         <div class="tab_link"></div>
                     </a>
                 </li>
                 <li class="split_01"></li>
                 <li>
-                    <img src="http://p.skymoons.com/statics/images/pkq/logo.png?v=20150813" alt="去吧皮卡丘手游"/>
+                    <div style="width:351px;height:162px;"></div>
                 </li>
                 <li class="split_01"></li>
                 <li class="bbs">
@@ -57,15 +56,13 @@
     <div id="main_content" class="page_content">
 
         <div id="main_left">
-            <!-- <div id="news_list">-->
-            <div id="news_lists" style="float:left;">
 
-                <span class="btn_pic_more" style="font-size:12px;color:white;}"><div class="crumbs"><a
-                        href="http://p.skymoons.com" title="去吧皮卡丘官网">首页</a><span> &gt; </span><a
-                        href="http://p.skymoons.com/newslist/">新闻信息</a> > <a href="http://p.skymoons.com/news/">新闻</a> >
-                </div></span>
+            <div id="news_list_title">
+                <!--<img src="{{resLocation}}/statics/images/news_title_s.png" style="float: left;margin-top: 35px;margin-left: 10px"/>-->
+                {{title_desc}}
             </div>
-            <div id="show_content">
+            <div id="show_content" >
+                <!--<div class="crumbs"><a href="/" >首页</a><span> &gt; </span><a href="/news">新闻</a></div>-->
                 <div style="border-bottom:1px dashed #BCB8B9;">
                     <br>
 
@@ -76,9 +73,8 @@
                     {{{content}}}
                 </div>
                 <p class="f14">
-                    <strong>上一篇：</strong><a
-                        href="http://p.skymoons.com/news/2016/0307/424.html">{{last_title}}</a><br/>
-                    <strong>下一篇：</strong><a href="http://p.skymoons.com/news/2016/0311/426.html">{{next_title}}</a>
+                    {{#last_link}}<strong>上一篇：</strong><a href="{{last_link}}">{{last_title}}</a><br/>{{/last_link}}
+                    {{#next_link}}<strong>下一篇：</strong><a href="{{next_link}}">{{next_title}}</a>{{/next_link}}
                 </p>
             </div>
 
@@ -89,15 +85,9 @@
                 <img src='{{resLocation}}/statics/images/qrcode.jpg'>
             </div>
             <div class="right_item_box">
-                <div class="right_item_title">
-                    <img src="http://p.skymoons.com/statics/images/pkq/t_img_yxgl.png" alt="去吧皮卡丘" /><a href="http://p.skymoons.com/yxgl/"><img  src="http://p.skymoons.com/statics/images/pkq/btn_more_01.png" alt="去吧皮卡丘攻略"/></a>
-                </div>
 
                 <!--#include file="/views/strategy.html" -->
 
-                <div class="right_item_title">
-                    <img src="http://p.skymoons.com/statics/images/pkq/t_img_yqlj.png" alt="" title="" />
-                </div>
                 <!--#include file="/views/links.html" -->
 
             </div>

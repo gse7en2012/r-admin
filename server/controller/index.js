@@ -6,6 +6,7 @@
 'use strict';
 
 const News       = require('./News');
+const NewsAct       = require('./NewsAct');
 const Activity   = require('./Activity');
 const Strategy   = require('./Strategy');
 const Links      = require('./Links');
@@ -14,6 +15,7 @@ const Auth       = require('./Auth');
 const Channel    = require('./Info');
 const controller = {
     News: News,
+    NewsAct: NewsAct,
     Activity: Activity,
     Auth: Auth,
     Strategy: Strategy,

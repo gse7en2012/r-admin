@@ -36,6 +36,7 @@ const StrategyApi = {
             author:req.body.author,
             uid:req.body.uid||req.adminUid,
             date:req.body.date,
+            custom_link:req.body.custom_link,
             content:req.body.content
         };
         return Controller.Strategy.addStrategy(strategy).then(

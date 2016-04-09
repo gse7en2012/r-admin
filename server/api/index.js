@@ -10,6 +10,7 @@ const serviceApi = {
     AuthApi: require('./AuthApi'),
     LogsApi: require('./LogsApi'),
     NewsApi: require('./NewsApi'),
+    NewsActApi: require('./NewsActApi'),
     InfoApi:require('./InfoApi')
 };
 

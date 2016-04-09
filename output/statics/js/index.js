@@ -1,18 +1,18 @@
 
 
 $(function () {
-    //$("#right_item_yxzl dt").each(function (i) {
-    //    $(this).click(function () {
-    //        $("#right_item_yxzl dd").each(function (j) {
-    //            if (i == j) {
-    //                $(this).css("display", "");
-    //            }
-    //            else {
-    //                $(this).css("display", "none");
-    //            }
-    //        });
-    //    });
-    //});
+    $("#right_item_yxzl dt").each(function (i) {
+        $(this).click(function () {
+            $("#right_item_yxzl dd").each(function (j) {
+                if (i == j) {
+                    $(this).css("display", "");
+                }
+                else {
+                    $(this).css("display", "none");
+                }
+            });
+        });
+    });
 
 
     //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
