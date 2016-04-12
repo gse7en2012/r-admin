@@ -17,12 +17,13 @@ function LinksEditCtrl($scope, $cookieStore,$stateParams, linksApiService) {
     });
 
     $scope.uploadSuccess=function(msg){
+        $scope.uploaddone=true;
         $scope.img=JSON.parse(msg).url;
     };
 
 
     $scope.edit=()=>{
-        linksApiService.editNews({
+        linksApiService.editLinks({
             img:$scope.img,
             author:$scope.author,
             name:$scope.name,

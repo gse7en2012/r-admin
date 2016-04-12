@@ -55,6 +55,8 @@
                                  ng-show="!$flow.files.length" width="28" height="28"/>
                             <img flow-img="$flow.files[0]" ng-show="$flow.files.length" width="28" height="28"/>
                             <span class="btn btn-default btn-sm" flow-btn><i class="fa fa-image"></i>选择图片</span>(尺寸28X28)
+                            <span ng-hide="uploaddone" class="alert-info">请等待图片上传完成后再点击确认按钮,图片上传完成后此处文案会变化!</span>
+                            <span ng-show="uploaddone" class="alert-info">图片上传完毕,可以点击确认按钮</span>
                         </div>
                     </div>
                 </div>

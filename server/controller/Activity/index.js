@@ -88,9 +88,13 @@ const ActivityController = {
         })
     },
     editActivity(activity){
+        const Staticize = require('../../comm/Staticize');
         return DataBaseModel.Activity.update(activity, {
             where: {activity_id: activity.activity_id}
-        }).then(()=>activity)
+        }).then(()=>{
+            Staticize.compileCarousel();
+            return activity;
+        })
     }
 };
 

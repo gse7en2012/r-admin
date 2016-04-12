@@ -44,7 +44,7 @@ const LinkApi = {
     },
     editLinkIF(req,res){
         const link={
-            img:req.body.img,
+            link_img:req.body.img,
             author:req.body.author,
             link_name:req.body.name,
             link_address:req.body.link,

@@ -10,6 +10,7 @@ function ActivityAddCtrl($scope, $cookieStore, activityApiService) {
     $scope.author=$cookieStore.get('radmin_name');
 
     $scope.uploadSuccess=function(msg){
+        $scope.uploaddone=true;
         $scope.img=JSON.parse(msg).url;
     };
 

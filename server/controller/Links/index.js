@@ -76,11 +76,14 @@ const LinkController = {
         })
     },
     editLink(link){
+        const Staticize = require('../../comm/Staticize');
         return DataBaseModel.Links.update(link,{
             where:{link_id:link.link_id}
         }).then(()=>{
             Staticize.compileLinks();
             return link
+        }).catch(e=>{
+            console.log(e);
         })
     }
 };

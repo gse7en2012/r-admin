@@ -7,12 +7,8 @@ const fs = require('fs');
 const mu = require('mu2'); // notice the "2" which matches the npm repo, sorry..
 const Controller = require('../../controller');
 const moment     = require('moment');
+const config=require('../config').outputConfig;
 
-const config     = {
-    rootDir: './output/templates',
-    outputDir: './output',
-    resLocation:'http://www.game.com'
-};
 
 mu.root = config.rootDir;
 

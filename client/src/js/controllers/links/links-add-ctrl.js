@@ -11,6 +11,7 @@ function LinksAddCtrl($scope, $cookieStore, linksApiService) {
 
 
     $scope.uploadSuccess=function(msg){
+        $scope.uploaddone=true;
         $scope.img=JSON.parse(msg).url;
     };
 

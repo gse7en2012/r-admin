@@ -6,12 +6,14 @@
  */
 'use strict';
 
-const Seq     = require('sequelize');
-let mysqlConn = new Seq('radmin', 'root', 'shimen112', {
-    host: '127.0.0.1',
-    port: '3306',
+const Seq      = require('sequelize');
+const DBConfig = require('../comm/config').DBConfig;
+
+let mysqlConn = new Seq(DBConfig.tableName, DBConfig.user, DBConfig.password, {
+    host: DBConfig.host,
+    port: DBConfig.port,
     dialect: 'mysql',
-    logging: false && console.log,
+    logging: console.log,
     omitNull: true,
     maxConcurrentQueries: 150,
     define: {
@@ -23,23 +25,6 @@ let mysqlConn = new Seq('radmin', 'root', 'shimen112', {
     pool: {maxConnections: 150, maxIdleTime: 300}
 });
 
-if (process.env.NODE_ENV === 'production') {
-    mysqlConn = new Seq('wx_crawler_kol', 'root', 'zab0326__', {
-        host: '120.132.145.2',
-        port: '3306',
-        dialect: 'mysql',
-        logging: console.log,
-        omitNull: true,
-        maxConcurrentQueries: 150,
-        define: {
-            timestamps: false,
-            freezeTableName: true,
-            charset: 'utf8mb4',
-            collate: 'utf8mb4_bin'
-        },
-        pool: {maxConnections: 150, maxIdleTime: 300}
-    });
-}
 
 const Activity   = mysqlConn.import(__dirname + '/Activity');
 const Links      = mysqlConn.import(__dirname + '/Links');

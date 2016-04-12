@@ -26,6 +26,7 @@
     "body-parser": "^1.15.0",
     "compression": "^1.6.1",
     "cookie-parser": "^1.4.1",
+    "debug": "^2.2.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "html-to-text": "^2.1.0",
