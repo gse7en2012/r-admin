@@ -72,7 +72,6 @@ const AuthController = {
             attributes: ['uid', 'name', 'login_time', 'permissions', 'is_ban', 'createdAt']
         }).then((users)=> {
             users.forEach((item)=> {
-                console.log(item);
                 item.dataValues.login_time = moment(item.dataValues.login_time).format('YYYY-MM-DD HH:mm:ss');
                 item.dataValues.createdAt  = moment(item.dataValues.createdAt).format('YYYY-MM-DD HH:mm:ss')
             });

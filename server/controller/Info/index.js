@@ -199,7 +199,23 @@ const InfoController = {
                 });
             });
         })
-    }
+    },
+    generateAllInfoStaticPage(){
+        return DataBaseModel.ChannelArt.findAll({
+            attributes:['art_id']
+        }).then((newsIdList)=>{
+            const idList=newsIdList.map((item)=>item.art_id);
+            const stId=setInterval(()=>{
+                const newsId=idList.pop();
+                if(newsId) {
+                    InfoController.generateStaticPageById(newsId)
+                }else{
+                    console.log(new Date(),'Info render all completed!');
+                    clearInterval(stId)
+                }
+            },500)
+        })
+    },
 };
-
+//InfoController.generateAllInfoStaticPage();
 module.exports = InfoController;

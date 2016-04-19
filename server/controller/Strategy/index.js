@@ -156,7 +156,6 @@ const StrategyController = {
                 'SELECT A.* FROM ( ( SELECT * FROM strategy WHERE strategy_id < ? ORDER BY strategy_id DESC LIMIT 1 ) UNION ( SELECT * FROM strategy WHERE strategy_id> ? ORDER BY strategy_id ASC LIMIT 1 ) ) as A ORDER BY A.strategy_id',
                 {replacements: [strategy.strategy_id, strategy.strategy_id], type: 'SELECT'}
             ).then(r=> {
-                console.log(r);
                 r.forEach((item)=> {
                     if (item.strategy_id > strategy.strategy_id) {
                         strategy.dataValues.next_title = item.title;
@@ -167,10 +166,26 @@ const StrategyController = {
                         strategy.dataValues.last_link  = item.custom_link || item.s_link;
                     }
                 });
-                console.log(strategy.dataValues);
                 Staticize.compileInsidePage('strategy', strategy.strategy_id, strategy.dataValues)
             });
 
+        })
+    },
+    generateAllStrategyStaticPage(){
+        StrategyController.generateStrategyListPage();
+        return DataBaseModel.Strategy.findAll({
+            attributes:['strategy_id']
+        }).then((newsIdList)=>{
+            const idList=newsIdList.map((item)=>item.strategy_id);
+            const stId=setInterval(()=>{
+                const newsId=idList.pop();
+                if(newsId) {
+                    StrategyController.generateStaticPageById(newsId)
+                }else{
+                    console.log(new Date(),'Strategy render all completed!');
+                    clearInterval(stId)
+                }
+            },500)
         })
     },
     generateStrategyListPage(){
@@ -226,5 +241,5 @@ const StrategyController = {
         })
     }
 };
-
+//StrategyController.generateAllStrategyStaticPage();
 module.exports = StrategyController;

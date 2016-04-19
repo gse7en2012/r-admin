@@ -13,7 +13,7 @@ let mysqlConn = new Seq(DBConfig.tableName, DBConfig.user, DBConfig.password, {
     host: DBConfig.host,
     port: DBConfig.port,
     dialect: 'mysql',
-    logging: console.log,
+    logging: false&&console.log,
     omitNull: true,
     maxConcurrentQueries: 150,
     define: {

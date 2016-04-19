@@ -185,6 +185,23 @@ const NewsController = {
             });
         })
     },
+    generateAllNewsStaticPage(){
+        NewsController.generateNewListPage();
+        return DataBaseModel.News.findAll({
+            attributes:['news_id']
+        }).then((newsIdList)=>{
+            const idList=newsIdList.map((item)=>item.news_id);
+            const stId=setInterval(()=>{
+                const newsId=idList.pop();
+                if(newsId) {
+                    NewsController.generateStaticPageById(newsId)
+                }else{
+                    console.log(new Date(),'News render all completed!');
+                    clearInterval(stId)
+                }
+            },500)
+        })
+    },
     generateNewListPage(){
         const Staticize = require('../../comm/Staticize');
         const pageSize  = 10;
@@ -238,5 +255,5 @@ const NewsController = {
         })
     }
 };
-//NewsController.generateNewListPage();
+//NewsController.generateAllNewsStaticPage();
 module.exports = NewsController;

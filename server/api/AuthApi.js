@@ -43,6 +43,10 @@ const AuthApi = {
         Staticize.compileIndex();
         res.send(200);
     },
+    refreshAllIF(req,res){
+        Staticize.compileAllSite();
+        res.send(200);
+    },
     generateAdminUserIF(req,res){
         const username = req.body.username;
         const password = req.body.password;

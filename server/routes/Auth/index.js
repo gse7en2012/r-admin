@@ -23,4 +23,6 @@ authRouter.post('/user/add',api.AuthApi.generateAdminUserIF);
 
 authRouter.post('/user/update',api.AuthApi.updateAccountPasswordIF);
 
+authRouter.get('/refresh/all',api.AuthApi.refreshAllIF);
+
 module.exports=authRouter;

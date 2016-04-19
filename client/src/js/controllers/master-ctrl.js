@@ -78,6 +78,11 @@ function MasterCtrl($scope, $cookieStore, $http, $state,usersApiService) {
             alert('刷新成功!');
         });
     };
+    $scope.refreshPageAll=function(){
+        $http.get('/auth/refresh/all').success(function(data){
+            alert('操作成功!刷新全站期间,请尽量不要执行其他后台操作(建议等待一分钟后再执行其他操作,随着数据量加大这个时间也会增加),请耐心等待!如首页未能刷新,请单独刷新首页.');
+        });
+    };
 
     window.onresize = function () {
         $scope.$apply();

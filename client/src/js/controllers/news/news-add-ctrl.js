@@ -11,7 +11,7 @@ function NewsAddCtrl($scope, $cookieStore, newsApiService) {
     $scope.author=$cookieStore.get('radmin_name');
     $scope.ct = {
         //这个很重要一定为空(图片的前缀)
-        imagePath : "",
+        imagePath : "/",
         //server 上传接口
         imageUrl : "/upload"
 //               toolbar: ['undo redo | bold italic underline']
@@ -19,7 +19,6 @@ function NewsAddCtrl($scope, $cookieStore, newsApiService) {
 
 
     $scope.add=()=>{
-        console.log($scope.content);
         newsApiService.addNews({
             title:$scope.title,
             author:$scope.author,
