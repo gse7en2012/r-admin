@@ -9,7 +9,7 @@
     <link href="statics/css/style.css" rel="stylesheet" type="text/css" />
     <link href="statics/css/custom.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="statics/js/jquery.min.js"></script>
-    <script type="text/javascript" src="statics/js/jquery.sgallery.js"></script>
+    <!--<script type="text/javascript" src="statics/js/jquery.sgallery.js"></script>-->
     <script type="text/javascript" src="statics/js/scroll.js"></script>
     <script type="text/javascript" src="statics/js/index.js"></script>
 </head>
@@ -18,6 +18,9 @@
     <div style="DISPLAY: none" id=goTopBtn><img border=0 src="statics/images/back_top.png" alt="返回顶部"></div>
 
     <div id="head_top">
+        <p class="top_link">
+            <a href="reg.html">用户注册</a>|<a href="pay.html">充值中心</a>
+        </p>
         <div id="banner">
             <ul class="c-af ">
                 <li class="split_01"></li>
@@ -58,22 +61,22 @@
             <div id="download_box">
                 <ul>
                     <li class="app">
-                        <a href="/index.php?m=content&c=downGame&a=ios" title="IOS正版下载">
+                        <a href="javascript:alert('即将开放!')" title="IOS正版下载">
                             <div class="tab_link"></div>
                         </a>
                     </li>
                     <li class="android">
-                        <a href="/index.php?m=content&c=downGame&a=andro" title="安卓下载">
+                        <a href="http://120.76.123.168/apk/lyhcq-1.0.18.0.apk" title="安卓下载">
                             <div class="tab_link"></div>
                         </a>
                     </li>
                     <li class="computer">
-                        <a href="/index.php?m=content&c=downGame&a=win">
+                        <a href="javascript:alert('即将开放!')">
                             <div class="tab_link"></div>
                         </a>
                     </li>
                     <li class="ios">
-                        <a href="/index.php?m=content&c=downGame&a=pios" target="_blank" title="礼包领取">
+                        <a href="javascript:alert('即将开放!')" target="_blank" title="礼包领取">
                             <div class="tab_link"></div>
                         </a>
                     </li>
@@ -103,6 +106,9 @@
 
         <div id="main_right">
             <div id="qr_box">
+                <div class="right_item_title">
+                    <img src="statics/images/t_img_kfzx.png"  />
+                </div>
                 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=8fb6474fa33e5ad382fff20ec8c87a6ceb2e660401baf245c89d3027ba0a1890" alt="点击直接加入QQ群" title="点击直接加入QQ群">
                     <img src='statics/images/qrcode.jpg'>
                 </a>
@@ -157,8 +163,6 @@
             _index=$(this).index();
             //alert(_index)
             $(this).addClass("avtive").siblings("li").removeClass("avtive");
-            $("#jdtBtn").find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_3.png");
-            $(this).find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_1.png");
 
             tabIndex(_index);
         }).eq(0).mouseover();
@@ -178,8 +182,7 @@
         function tabIndex(_index){
             $("#jdtList").stop().animate({"left":-_index*$w},1000);
             $("#jdtBtn li").eq(_index).addClass("avtive").siblings("li").removeClass("avtive");
-            $("#jdtBtn").find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_3.png");
-            $("#jdtBtn li").eq(_index).find("img").attr("src","http://p.skymoons.com/statics/images/pkq/Point_1.png");
+
         }
     })
 

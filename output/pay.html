@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>宁静海官网</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="statics/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="statics/css/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="statics/css/pay.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="main">
+    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="statics/images/back_top.png" alt="返回顶部"></div>
+
+    <div id="head_top">
+        <div id="banner">
+            <ul class="c-af ">
+                <li class="split_01"></li>
+                <li class="index cur">
+                    <a href="/index.html">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+                <li class="news">
+                    <a href="/news/index.html">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+                <li>
+                    <div style="width:351px;height:162px;"></div>
+                </li>
+                <li class="split_01"></li>
+                <li class="bbs">
+                    <a href="javascript:void(0);" onClick="alert('暂未开启，敬请期待...');">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+                <li class="activity">
+                    <a href="/activity/index.html">
+                        <div class="tab_link"></div>
+                    </a>
+                </li>
+                <li class="split_01"></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="pay_container clearfix">
+
+        <div class="leftArea">
+            <h3 class="tit">充值中心</h3>
+            <ul class="payLeftBar">
+                <li><a href="#" class="payBar1 on"><i></i><span>我要充值</span><em></em></a></li>
+                <li><a href="javascript:alert('即将开放')"  class="payBar2"><i></i><span>常见问题</span><em></em></a></li>
+                <li><a href="javascript:alert('即将开放')" class="payBar3"><i></i><span>充值记录</span><em></em></a></li>
+            </ul>
+        </div>
+
+        <div class="rightArea">
+            <div class="account_box">
+                <div class="account_item" style="display:block;">
+                    <span class="account_t">通行证账号：</span>
+                    <input type="text" class="inp_long" name="username" id="username" placeholder="通行证账号">
+                    <div style="display:none;" id="tip_username" class="msg">您输入的账号不存在</div>
+                </div>
+                <div class="account_item" style="display:block;">
+                    <span class="account_t">确认账号：</span>
+                    <input type="text" class="inp_long" name="username2" id="username2" placeholder="再次输入您的通行证">
+                </div>
+                <div class="account_item" id="account_mode" style="display:block;">
+                    <span class="account_t">充值方式：</span>
+					<span class="dBox">
+                    	<!--<em tip="3" id="pay1" class="">支付宝</em>-->
+                    	<em tip="2" id="pay2" class="active">网上银行</em>
+                    </span>
+                </div>
+
+                <div class="account_item" id="account_money" style="display:block;" contype="con_info1">
+                    <span class="account_t">充值数量：</span>
+					<span class="dBox">
+                    	<em class="active">600</em>
+                    	<em>1500</em>
+                    	<em>6000</em>
+                    	<em>10000</em>
+                        <input autocomplete="off" type="text" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}" maxlength="7" id="inputmoney" class="inp_dmoney" placeholder="其他">
+                    </span>
+                </div>
+
+
+                <!--网上银行充值-->
+                <div class="account_item clearfix" id="account_bank" contype="con_info3" style="display: block;">
+                    <span class="account_t fl">选择银行：</span>
+					<span class="bankList fl">
+                    	<em value="188" style="display: inline-block;"><input type="radio" name="bank" id="bank1" value="188"><i class="icon1"></i><label for="bank1">工商银行</label></em>
+                        <em value="105" style="display: inline-block;"><input type="radio" name="bank" id="bank2" value="105"><i class="icon2"></i><label for="bank2">中国银行</label></em>
+                        <em value="101" style="display: inline-block;"><input type="radio" name="bank" id="bank3" value="101"><i class="icon3"></i><label for="bank3">招商银行</label></em>
+                        <em value="104" style="display: inline-block;"><input type="radio" name="bank" id="bank4" value="104"><i class="icon4"></i><label for="bank4">农业银行</label></em>
+                        <em value="115" style="display: inline-block;"><input type="radio" name="bank" id="bank5" value="115"><i class="icon5"></i><label for="bank5">邮政银行</label></em>
+                        <em value="106" style="display: inline-block;"><input type="radio" name="bank" id="bank6" value="106"><i class="icon6"></i><label for="bank6">交通银行</label></em>
+                        <em value="116" style="display: inline-block;"><input type="radio" name="bank" id="bank7" value="116"><i class="icon7"></i><label for="bank7">广发银行</label></em>
+                        <em value="108" style="display: inline-block;"><input type="radio" name="bank" id="bank8" value="108"><i class="icon8"></i><label for="bank8">深发银行</label></em>
+                        <em value="107" style="display: inline-block;"><input type="radio" name="bank" id="bank9" value="107"><i class="icon9"></i><label for="bank9">民生银行</label></em>
+                    </span>
+                </div>
+
+                <div class="account_item" id="account_money_phone" style="display:none;" contype="con_info1">
+                    <span class="account_t">充值金额：</span>
+					<span class="dBox" id="">
+                    	<em mony="30" class="active">30元</em>
+                    	<em mony="50">50元</em>
+                    	<em mony="100">100元</em>
+                    </span>
+                </div>
+
+
+                <div class="pay_btn">
+                    <a class="recharge" id="pay_btn" href="javascript:alert('即将开放!')">立即充值</a>
+                    <!--
+                    <span class="reg_wrong">立即充值</span>
+                     -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div style="heigth:10px;"></div>
+    ﻿
+    <div id="footer" class="c-af">
+        <div id="footer_tip">
+            <span class="tip_title">健康游戏公告：</span>抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
+        </div>
+
+    </div>
+    <p style="margin-bottom:20px;color:#d6d6d6;">Copyright&copy;2014-2016 广州宁静海信息科技有限公司 All Rights Reserved.</p>
+</div>
+</body>
+</html>
+

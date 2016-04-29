@@ -27,13 +27,12 @@ function InfoArtEditCtrl($scope, $cookieStore,$stateParams, infoApiService) {
     }).then((data)=>{
         $scope.channelList=[];
         data.result.dataList.forEach((item)=>{
-            $scope.channelList .push({
+            $scope.channelList.push({
                 value:item.channel_id,
                 name:item.name
             })
         });
-        $scope.channelId = $scope.channelList[tmp];
-        console.log(tmp,$scope.channelId);
+        $scope.channelId = $scope.channelList[tmp-1];
     });
 
 
