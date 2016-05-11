@@ -1,0 +1,57 @@
+<div data-ng-controller="LogsCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <ul class="nav nav-tabs ">
+                    <li role="presentation" class="active"><a>登录日志</a></li>
+                    <li role="presentation"><a href="#/logs/op">操作日志</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="white-box" style="float: none;">
+        <div class="row">
+            <div class="col-xs-12 col-lg-1 col-md-2">
+            </div>
+            <div class="col-lg-4 col-md-4">
+            </div>
+            <div class="col-xs-6 col-md-4 col-lg-offset-1 col-sm-6" style="line-height: 30px;text-align: right">
+
+                <button class="btn btn-sm btn-default" ng-click="jumpPrev()" ng-disabled="currentPage<=1"><span class="fa fa-arrow-left"></span></button>
+                <button class="btn btn-sm btn-default" ng-click="jumpNext()" ng-disabled="totalCount/50<=1"><span class="fa fa-arrow-right"></span></button>
+                共{{totalCount}}条记录,当前页数:{{currentPage}}.
+            </div>
+            <div class="col-xs-6 col-md-2 col-sm-6 ">
+                <div class="input-group">
+                    <input type="text" class="form-control input-sm" placeholder="输入页码..." ng-model="jPage">
+                <span class="input-group-btn" ng-click="jump(jPage)">
+                    <button class="btn btn-default btn-sm" type="button"><span class="fa fa-share"></span></button>跳转
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" id="no-more-tables">
+                <table class="table table-striped ">
+                    <thead class="cf">
+                    <tr>
+                        <th>记录ID</th>
+                        <th>用户ID</th>
+                        <th>登录时间</th>
+                        <th>登录IP</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="data in dataList">
+                        <th>{{data.login_pid}}</th>
+                        <td>{{data.login_uid}}</td>
+                        <td>{{data.login_time}}</td>
+                        <td>{{data.login_ip}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

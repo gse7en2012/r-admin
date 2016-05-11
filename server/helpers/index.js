@@ -76,9 +76,7 @@ const globalHelpers = {
         }
 
         const uri        = req.originalUrl;
-        if(uri.indexOf('/delete')!=-1){
-            globalHelpers.logAction(req.adminUid,uri+'|'+JSON.stringify(req.params))
-        }
+
         //不是开发环境，则校验请求头
         //const uri        = req.originalUrl;
         //const checkIndex = encryptConfig.encryptRoute.indexOf(uri);
@@ -102,6 +100,9 @@ const globalHelpers = {
         } else {
             //如果不校验token，随机返回uid
             req.adminUid = 1 || _.random(1, 100000);
+        }
+        if(uri.indexOf('/delete')!=-1){
+            globalHelpers.logAction(req.adminUid,uri+'|'+JSON.stringify(req.params)+"|"+(JSON.stringify(req.body)))
         }
         next();
     }

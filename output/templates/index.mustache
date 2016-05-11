@@ -10,7 +10,9 @@
     <link href="statics/css/custom.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="statics/js/jquery.min.js"></script>
     <!--<script type="text/javascript" src="statics/js/jquery.sgallery.js"></script>-->
+    <script type="text/javascript" src="statics/js/mod.js"></script>
     <script type="text/javascript" src="statics/js/scroll.js"></script>
+    <script type="text/javascript" src="statics/js/jCare.js"></script>
     <script type="text/javascript" src="statics/js/index.js"></script>
 </head>
 <body>
@@ -150,40 +152,4 @@
 </body>
 </html>
 
-<script type="text/javascript">
-    $(function(){
-        var $w=$("#jdtList li").width();
-        var len=$("#jdtList li").length;
-        var timer=null;
-        var _index=0;
-        //alert(len)
-        //alert($w)
-        $("#jdtList").width($w*len);
-        $("#jdtBtn li").mouseover(function(){
-            _index=$(this).index();
-            //alert(_index)
-            $(this).addClass("avtive").siblings("li").removeClass("avtive");
 
-            tabIndex(_index);
-        }).eq(0).mouseover();
-
-        $(".jdt").hover(function(){
-            clearInterval(timer);
-        },function(){
-            timer=setInterval(function(){
-                tabIndex(_index);
-                _index++;
-                if(_index==len){
-                    _index=0;
-                }
-            },3000)
-        }).trigger("mouseleave");
-
-        function tabIndex(_index){
-            $("#jdtList").stop().animate({"left":-_index*$w},1000);
-            $("#jdtBtn li").eq(_index).addClass("avtive").siblings("li").removeClass("avtive");
-
-        }
-    })
-
-</script>

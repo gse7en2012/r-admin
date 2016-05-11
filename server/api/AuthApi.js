@@ -14,7 +14,7 @@ const AuthApi = {
     loginAdminUserIF(req, res){
         const username = req.body.username;
         const password = req.body.password;
-        const ip=req.ip;
+        const ip=req.header('X-Real-IP')||req.ip;
         return Controller.Auth.loginAdminUser(username, password,ip)
             .then((r)=> {
                 const token = Helpers.buildToken(r.uid);

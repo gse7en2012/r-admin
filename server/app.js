@@ -61,6 +61,7 @@ app.use('/strategy', routes.Strategy);
 app.use('/activity', routes.Activity);
 app.use('/links', routes.Links);
 app.use('/info', routes.Info);
+app.use('/logs', routes.Logs);
 
 
 //for umeditor

@@ -102,6 +102,14 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('userAdd', {
                 url: '/user/add',
                 templateUrl: 'templates/user/usersAdd.html'
+            })
+            .state('loginLogs', {
+                url: '/logs',
+                templateUrl: 'templates/logs/loginLogsList.html'
+            })
+            .state('opLogs', {
+                url: '/logs/op',
+                templateUrl: 'templates/logs/opLogsList.html'
             });
     }
 ]);
