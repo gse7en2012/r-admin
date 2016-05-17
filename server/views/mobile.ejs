@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=640;target-densitydpi=device-dpi;minimum-scale=0.5;maximum-scale=2.0,user-scalable=yes"/>
+    <title>宁静海官方网站</title>
+    <meta name="keywords" content="炼妖传奇,宁静海官网">
+    <meta name="description" content="炼妖传奇,宁静海官网">
+    <link rel="stylesheet" type="text/css" href="/m_statics/css/skm.css"/>
+    <link rel="stylesheet" href="/m_statics/css/idangerous.swiper.css">
+    <link rel="stylesheet" href="/m_statics/css/style_wap.css?v=1.8">
+    <link rel="stylesheet" href="/m_statics/css/dialog.css">
+    <link rel="stylesheet" href="/m_statics/css/swiper-demos.css?v=1.8">
+    <script src="/m_statics/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/m_statics/js/mod.js"></script>
+    <script type="text/javascript" src="/m_statics/js/jCare.js"></script>
+    <script src="/m_statics/js/dialog.js"></script>
+    <!-- Swiper -->
+    <script src="/m_statics/js/idangerous.swiper-1.8.min.js"></script>
+    <!-- Demos code -->
+    <script src="/m_statics/js/swiper-demos.js?v=1.8"></script>
+    <script src="/m_statics/js/wap_main.js?v=201509061745"></script>
+</head>
+
+<body>
+<div id="wrap">
+    <header>
+        <div class="bg-banner-01">
+            <div class="bg-banner-02">
+                <a class="ui-btn-d1" href="#bg-banner" id="get_game_gift"><span class="hid">领取礼包</span></a>
+
+
+                <a class="ui-btn-d2" href="/index.php?m=content&c=downGame&a=mDown" id="down_mobile_android"
+                   onclick="down('mobile_android')"><span class="hid">去吧皮卡丘 安卓版</span></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="ui-tit-style1"><span>游戏截图</span></div>
+        <div class="content content-jcarousel">
+
+            <div class="jcarousel">
+                <ul>
+                    <% carousel.forEach(function(item){%>
+                    <li class="" ><a href="<%= item.link%>"><img src="/<%= item.img%>" alt="<%= item.title%>"></a></li>
+                    <% })%>
+                </ul>
+            </div>
+            <p class="jcarousel-pagination"></p>
+
+        </div>
+    </section>
+
+    <section id="section_news" style="margin-top: 40px;">
+        <ul class="ui-tit-style2" id="news_list_tab">
+            <li class="li2 selected"></li>
+            <li class="li1"></li>
+            <li class="li3"></li>
+            <li class="li4"></li>
+        </ul>
+        <div class="news_list">
+
+            <% news.forEach(function(item,index){%>
+                <% if(index==0){%>
+                    <div class="recommend">
+                        <a href="/m/news?news_id=<%= item.news_id%>">
+                            <% if(item.image){%>
+                            <img src="<%= item.image%>" style=" width:220px; margin-right:10px; float:left;"/>
+                            <% }%>
+                            <p class="recommend_title"><%= item.title%></p>
+
+                            <p class="brief"><%= item.pre%></p>
+                        </a>
+                    </div>
+
+                    <div style="clear:both;"></div>
+                    <div>
+                <% }else{%>
+                        <p>
+                            <a class="title" href="/m/news?news_id=<%= item.news_id%>"><%= item.title%></a>
+                            <span class="news_time">[<%= item.date%>]</span>
+                        </p>
+                <% }%>
+
+            <% })%>
+                    </div>
+        </div>
+
+        <div class="news_list">
+
+            <% strategy.forEach(function(item,index){%>
+            <% if(index==0){%>
+            <div class="recommend">
+                <a href="/m/strategy?strategy_id=<%= item.strategy_id%>">
+                    <% if(item.image){%>
+                    <img src="<%= item.image%>" style=" width:220px; margin-right:10px; float:left;"/>
+                    <% }%>
+                    <p class="recommend_title"><%= item.title%></p>
+
+                    <p class="brief"><%= item.pre%></p>
+                </a>
+            </div>
+
+            <div style="clear:both;"></div>
+            <div>
+                <% }else{%>
+                <p>
+                    <a class="title" href="/m/strategy?strategy_id=<%= item.strategy_id%>"><%= item.title%></a>
+                    <span class="news_time">[<%= item.date%>]</span>
+                </p>
+                <% }%>
+
+                <% })%>
+            </div>
+        </div>
+
+
+        <div class="news_list">
+
+            <% acts.forEach(function(item,index){%>
+            <% if(index==0){%>
+            <div class="recommend">
+                <a href="/m/activity?act_id=<%= item.news_act_id%>">
+                    <% if(item.image){%>
+                    <img src="<%= item.image%>" style=" width:220px; margin-right:10px; float:left;"/>
+                    <% }%>
+                    <p class="recommend_title"><%= item.title%></p>
+
+                    <p class="brief"><%= item.pre%></p>
+                </a>
+            </div>
+
+            <div style="clear:both;"></div>
+            <div>
+                <% }else{%>
+                <p>
+                    <a class="title" href="/m/activity?act_id=<%= item.news_act_id%>"><%= item.title%></a>
+                    <span class="news_time">[<%= item.date%>]</span>
+                </p>
+                <% }%>
+
+                <% })%>
+            </div>
+        </div>
+
+        <div class="news_list">
+
+            <% news.forEach(function(item,index){%>
+            <% if(index==0){%>
+            <div class="recommend">
+                <a href="/m/news?news_id=<%= item.news_id%>">
+                    <% if(item.image){%>
+                    <img src="<%= item.image%>" style=" width:220px; margin-right:10px; float:left;"/>
+                    <% }%>
+                    <p class="recommend_title"><%= item.title%></p>
+
+                    <p class="brief"><%= item.pre%></p>
+                </a>
+            </div>
+
+            <div style="clear:both;"></div>
+            <div>
+                <% }else{%>
+                <p>
+                    <a class="title" href="/m/news?news_id=<%= item.news_id%>"><%= item.title%></a>
+                    <span class="news_time">[<%= item.date%>]</span>
+                </p>
+                <% }%>
+
+                <% })%>
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="anniu-m" id="btn_show_more_news">
+            查看更多>>
+        </div>
+    </section>
+
+    <div style="margin-top: 50px;">
+        <img src="http://www.game.com/statics/images/qrcode.jpg" style="display:block;margin:0 auto;width:400px;">
+    </div>
+    <p style="font-size:18px;margin-bottom:20px;text-align:center;padding: 15px 0;">Copyright&copy;2014-2016
+        广州宁静海信息科技有限公司 All Rights Reserved.</p>
+</div>
+
+<div id="dialog_game_gift_content" style="display:none;">
+    <div style="width:450px;">
+        <div style=" height:42px ; background:#00a848; padding:5px; padding-top:10px; padding-right:10px;">
+            <img id="dialog_game_gift_btn_close" onclick="dialog_gift.hide();" class="close"
+                 src="http://p.skymoons.com/statics/images/pkq/wap/btn_dialog_close.jpg"
+                 style="float:right; cursor:pointer;"/>
+        </div>
+        <div style="background:#d7f5d9; padding:10px;">
+            <div id="dialog_game_gift_content_detail">
+                <div id="getgift_info">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        var jcarousel = $('.jcarousel');
+
+        jcarousel.on('jcarousel:reload jcarousel:create', function () {
+                    jcarousel.jcarousel('items').width(jcarousel.innerWidth());
+                })
+                .jcarousel({
+                    wrap: 'circular',
+                    transitions: Modernizr.csstransitions ? {
+                        transforms: Modernizr.csstransforms,
+                        transforms3d: Modernizr.csstransforms3d,
+                        easing: 'ease'
+                    } : false
+                })
+                .jcarouselAutoscroll({
+                    interval: 3000,
+                    target: '+=1',
+                    autostart: true
+                });
+
+
+        $('.jcarousel-pagination')
+                .on('jcarouselpagination:active', 'a', function () {
+                    $(this).addClass('active');
+                })
+                .on('jcarouselpagination:inactive', 'a', function () {
+                    $(this).removeClass('active');
+                })
+                .on('click', function (e) {
+                    e.preventDefault();
+                })
+                .jcarouselPagination({
+                    item: function (page) {
+                        return '<a href="#' + page + '">' + page + '</a>';
+                    }
+                });
+    })
+
+</script>

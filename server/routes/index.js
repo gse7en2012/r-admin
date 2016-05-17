@@ -9,5 +9,6 @@ module.exports = {
     Links: require('./Link'),
     Info: require('./Info'),
     Strategy: require('./Strategy'),
-    Logs: require('./Logs')
+    Logs: require('./Logs'),
+    Mobile:require('./Mobile')
 };

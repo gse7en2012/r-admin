@@ -35,8 +35,35 @@ const StaticizeController = {
             s.on('finish', ()=> {
                 console.log('news render end!');
             });
+            StaticizeController.compileNewsForMobile();
         })
     },
+
+    compileNewsForMobile(){
+        return Controller.News.getNewsList(1, 11).then((result)=> {
+
+            result.dataList.forEach(function (item) {
+                if (item.s_link && item.s_link.indexOf('http') == -1 && item.s_link.indexOf('.html') != -1) {
+                    item.s_link = item.s_link.replace('.html', '_m.html')
+                }
+            });
+
+            const recommend = result.dataList.shift();
+            const dataInfo  = {
+                recommend: recommend,
+                news: result.dataList
+            };
+            let s;
+            mu.compileAndRender('mobile_news.mustache', dataInfo).pipe(
+                s = fs.createWriteStream(config.outputDir + '/views/mobile_news.html')
+            );
+            s.on('finish', ()=> {
+                console.log('mobile news render end!');
+            });
+        })
+    },
+
+
     compileActivity(){
         return Controller.NewsAct.getNewsList(1, 4).then((result)=> {
             const dataInfo       = {news: result.dataList};
@@ -50,6 +77,32 @@ const StaticizeController = {
             });
         })
     },
+    compileActivityForMobile(){
+        return Controller.NewsAct.getNewsList(1, 11).then((result)=> {
+
+            result.dataList.forEach(function (item) {
+                if (item.s_link && item.s_link.indexOf('http') == -1 && item.s_link.indexOf('.html') != -1) {
+                    item.s_link = item.s_link.replace('.html', '_m.html')
+                }
+            });
+
+            const recommend = result.dataList.shift();
+            const dataInfo  = {
+                recommend: recommend,
+                news: result.dataList
+            };
+            let s;
+            mu.compileAndRender('mobile_news.mustache', dataInfo).pipe(
+                s = fs.createWriteStream(config.outputDir + '/views/mobile_activity.html')
+            );
+            s.on('finish', ()=> {
+                console.log('mobile mobile_activity render end!');
+            });
+        })
+    },
+
+
+
     compileCarousel(){
         return Controller.Activity.getActivityList(1, 5, true).then((result)=> {
             const dataInfo       = {activitys: result.dataList};
@@ -68,6 +121,31 @@ const StaticizeController = {
             );
         })
     },
+    compileStrategyForMobile(){
+        return Controller.Strategy.getStrategyList(1, 11).then((result)=> {
+
+            result.dataList.forEach(function (item) {
+                if (item.s_link && item.s_link.indexOf('http') == -1 && item.s_link.indexOf('.html') != -1) {
+                    item.s_link = item.s_link.replace('.html', '_m.html')
+                }
+            });
+
+            const recommend = result.dataList.shift();
+            const dataInfo  = {
+                recommend: recommend,
+                news: result.dataList
+            };
+            let s;
+            mu.compileAndRender('mobile_news.mustache', dataInfo).pipe(
+                s = fs.createWriteStream(config.outputDir + '/views/mobile_strategy.html')
+            );
+            s.on('finish', ()=> {
+                console.log('mobile strategy render end!');
+            });
+        })
+    },
+
+
     compileLinks(){
         return Controller.Links.getLinksList(1, 10).then((result)=> {
             const dataInfo       = {links: result.dataList};
@@ -90,6 +168,9 @@ const StaticizeController = {
         console.log('index render');
         mu.compileAndRender('index.mustache').pipe(
             fs.createWriteStream(config.outputDir + '/index.html')
+        );
+        mu.compileAndRender('mobile.mustache').pipe(
+            fs.createWriteStream(config.outputDir + '/mobile/index.html')
         );
     },
     compileNewsList(dataInfo, page){
@@ -156,6 +237,11 @@ const StaticizeController = {
         mu.compileAndRender('page.mustache', dataInfo).pipe(
             fs.createWriteStream(filename)
         );
+        //for mobile
+        mu.compileAndRender('mobile_page.mustache', dataInfo).pipe(
+            fs.createWriteStream(filename.replace('.html', '_m.html'))
+        );
+
         return Promise.resolve(filename.replace(config.outputDir, ''));
     },
     deleteFile(filename){
@@ -166,10 +252,13 @@ const StaticizeController = {
     compileAllSite(){
 
         StaticizeController.compileActivity();
+        StaticizeController.compileActivityForMobile();
         StaticizeController.compileNews();
+        StaticizeController.compileNewsForMobile();
         StaticizeController.compileCarousel();
         StaticizeController.compileInfo();
         StaticizeController.compileStrategy();
+        StaticizeController.compileStrategyForMobile();
         StaticizeController.compileLinks();
 
 
@@ -178,13 +267,15 @@ const StaticizeController = {
         Controller.Strategy.generateAllStrategyStaticPage();
         Controller.Channel.generateAllInfoStaticPage();
 
-        setTimeout(()=>{
+        setTimeout(()=> {
             StaticizeController.compileIndex();
-        },5000);
+        }, 5000);
 
         return Promise.resolve('all  site render ok!')
     }
 };
+
+//StaticizeController.compileIndex();
 
 
 module.exports = StaticizeController;

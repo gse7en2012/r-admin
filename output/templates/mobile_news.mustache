@@ -1,0 +1,25 @@
+<div class="news_list">
+    {{#recommend}}
+    <div class="recommend">
+        <a href="{{s_link}}">
+            {{#image}}
+            <img src="{{image}}" style=" width:220px; margin-right:10px; float:left;"/>
+            {{/image}}
+            <p class="recommend_title">{{title}}</p>
+
+            <p class="brief">{{pre}}</p>
+        </a>
+    </div>
+    {{/recommend}}
+    <div style="clear:both;"></div>
+    <div>
+        {{#news}}
+        <p>
+            <a class="title" href="{{s_link}}">{{title}}</a>
+            <span class="news_time">[{{date}}]</span>
+        </p>
+        {{/news}}
+
+    </div>
+
+</div>

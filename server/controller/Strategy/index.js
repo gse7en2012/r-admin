@@ -20,7 +20,12 @@ const $strategyHelper = {
                 strategy_id: item.strategy_id,
                 title: item.title,
                 author: item.author,
-                s_link:item.custom_link||item.s_link
+                s_link:item.custom_link||item.s_link,
+                pre: htmlToText.fromString(item.content, {
+                    wordwrap: 0,
+                    ignoreHref: true,
+                    ignoreImage: true
+                }).slice(0, 100).replace(/\n/g, '').replace(/ /g, ''),
             });
         });
         return {
