@@ -50,8 +50,8 @@ img {border:none}
 }
 
 #banner .split_01 {
-    background: url(../images/split_01.png);
-    width: 2px;
+    /*background: url(../images/split_01.png);*/
+    width: 4px;
     height: 110px;
     margin: 0px;
 }

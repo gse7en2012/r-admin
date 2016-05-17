@@ -76,14 +76,14 @@ header {
 .ui-btn-d1 {
     position: absolute;
     top: 800px;
-    left: 36px;
+    right: 25px;
     background: url(../images/btn_get_gift.png);
 }
 
 .ui-btn-d2 {
     position: absolute;
     top: 800px;
-    right: 37px;
+    left: 25px;
     background: url(../images/btn_down_android.png);
 }
 
