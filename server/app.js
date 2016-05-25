@@ -38,6 +38,7 @@ const upload         = uploadMake('images');
 const uploadActivity = uploadMake('activity');
 const uploadLinks    = uploadMake('links');
 const uploadInfo     = uploadMake('info');
+const uploadNews    = uploadMake('news');
 const app            = express();
 
 // view engine setup
@@ -71,6 +72,8 @@ app.post('/upload', upload.single('upfile'), (req, res)=> uploadImgRes(req, res,
 app.post('/upload/activity', uploadActivity.single('file'), (req, res)=> uploadImgRes(req, res, 'activity'));
 app.post('/upload/links', uploadLinks.single('file'), (req, res)=> uploadImgRes(req, res, 'links'));
 app.post('/upload/info', uploadInfo.single('file'), (req, res)=> uploadImgRes(req, res, 'info'));
+app.post('/upload/news', uploadNews.single('file'), (req, res)=> uploadImgRes(req, res, 'news'));
+
 
 app.use(express.static(path.resolve('client/dist/')));
 app.use(express.static(path.resolve('server/upload/')));

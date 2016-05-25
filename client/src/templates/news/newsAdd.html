@@ -30,6 +30,27 @@
                         <input type="text" class="form-control" id="customlink" placeholder="默认为该文章地址,如需指向其他链接,请填写此处,否则留空" ng-model="custom_link">
                     </div>
                 </div>
+
+                <div flow-init="{target: '/upload/news',testChunks:false}"
+                     flow-files-submitted="$flow.upload()"
+                     flow-file-success="uploadSuccess($message)">
+                    <div class="form-group">
+                        <label  class="col-sm-1 control-label">自定义封面</label>
+
+                        <div class="col-sm-9">
+                            <span class="btn btn-default btn-sm" flow-btn><i class="fa fa-image"></i>选择图片</span>
+                            <span ng-hide="uploaddone" class="alert-info">请等待图片上传完成后再点击确认按钮,图片上传完成后此处文案会变化!</span>
+                            <span ng-show="uploaddone" class="alert-info">图片上传完毕,可以点击确认按钮</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10">
+                            <img src="http://www.placehold.it/210X128/DDDDDD/AAAAAA&amp;text=210X128"
+                                 ng-show="!$flow.files.length" width="210" height="128"/>
+                            <img flow-img="$flow.files[0]" ng-show="$flow.files.length" width="210" height="128"/>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="date" class="col-sm-1 control-label">新闻内容</label>
 

@@ -36,7 +36,7 @@ const $newsHelper = {
                     ignoreHref: true,
                     ignoreImage: true
                 }).slice(0, 100).replace(/\n/g, '').replace(/ /g, ''),
-                image: getFirstImage(item.content)
+                image: item.cover || getFirstImage(item.content)
             });
         });
         return {
@@ -81,7 +81,8 @@ const NewsController = {
             uid: news.uid,
             date: news.date || new Date(),
             custom_link: news.custom_link,
-            content: news.content
+            content: news.content,
+            cover: news.cover
         });
         return newsInstance.save().then((newsD)=> {
             NewsController.generateStaticPage(newsD);
@@ -113,7 +114,7 @@ const NewsController = {
         const Staticize = require('../../comm/Staticize');
         return DataBaseModel.News.update(news, {
             where: {news_id: news.news_id}
-        }).then(()=>{
+        }).then(()=> {
             NewsController.generateStaticPageById(news.news_id);
             NewsController.generateNewListPage();
             Staticize.compileNews();
@@ -127,9 +128,9 @@ const NewsController = {
             'SELECT A.* FROM ( ( SELECT * FROM news WHERE news_id < ? ORDER BY news_id DESC LIMIT 1 ) UNION ( SELECT * FROM news WHERE news_id> ? ORDER BY news_id ASC LIMIT 1 ) ) as A ORDER BY A.news_id',
             {replacements: [news.news_id, news.news_id], type: 'SELECT'}
         ).then(r=> {
-            news.dataValues.title_desc="新闻详情";
-            news.dataValues.date = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
-            news.dataValues.pre  = htmlToText.fromString(news.content, {
+            news.dataValues.title_desc = "新闻详情";
+            news.dataValues.date       = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
+            news.dataValues.pre        = htmlToText.fromString(news.content, {
                 wordwrap: 0,
                 ignoreHref: true,
                 ignoreImage: true
@@ -159,9 +160,9 @@ const NewsController = {
     generateStaticPageById(newsId){
         const Staticize = require('../../comm/Staticize');
         DataBaseModel.News.findById(newsId).then((news)=> {
-            news.dataValues.title_desc="新闻详情";
-            news.dataValues.date = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
-            news.dataValues.pre  = htmlToText.fromString(news.content, {
+            news.dataValues.title_desc = "新闻详情";
+            news.dataValues.date       = moment(news.date).format('YYYY-MM-DD HH:mm:ss');
+            news.dataValues.pre        = htmlToText.fromString(news.content, {
                 wordwrap: 0,
                 ignoreHref: true,
                 ignoreImage: true
@@ -188,18 +189,18 @@ const NewsController = {
     generateAllNewsStaticPage(){
         NewsController.generateNewListPage();
         return DataBaseModel.News.findAll({
-            attributes:['news_id']
-        }).then((newsIdList)=>{
-            const idList=newsIdList.map((item)=>item.news_id);
-            const stId=setInterval(()=>{
-                const newsId=idList.pop();
-                if(newsId) {
+            attributes: ['news_id']
+        }).then((newsIdList)=> {
+            const idList = newsIdList.map((item)=>item.news_id);
+            const stId   = setInterval(()=> {
+                const newsId = idList.pop();
+                if (newsId) {
                     NewsController.generateStaticPageById(newsId)
-                }else{
-                    console.log(new Date(),'News render all completed!');
+                } else {
+                    console.log(new Date(), 'News render all completed!');
                     clearInterval(stId)
                 }
-            },500)
+            }, 500)
         })
     },
     generateNewListPage(){

@@ -24,6 +24,7 @@ function NewsAddCtrl($scope, $cookieStore, newsApiService) {
             author:$scope.author,
             uid:1,
             date:new Date(),
+            cover:$scope.cover,
             custom_link:$scope.custom_link,
             content:$scope.content
         }).then(()=>{
@@ -31,4 +32,9 @@ function NewsAddCtrl($scope, $cookieStore, newsApiService) {
             location.href='/#/news'
         })
     }
+
+    $scope.uploadSuccess=function(msg){
+        $scope.uploaddone=true;
+        $scope.cover=JSON.parse(msg).url;
+    };
 }

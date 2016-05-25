@@ -50,7 +50,13 @@ $(function () {
         .jcarouselAutoscroll({
             interval: 3000,
             target: '+=1',
-            autostart: true
+            autostart: true,
+            create: jcarousel.hover(function () {
+                    $(this).jcarouselAutoscroll('stop');
+                },
+                function () {
+                    $(this).jcarouselAutoscroll('start');
+                })
         });
 
 

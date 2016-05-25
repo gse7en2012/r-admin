@@ -3,7 +3,7 @@
 
 #main_left_side{float: left;width: 294px;margin-right: 14px;}
 #main_right{width: 298px;}
-#footer{width: 1350px;margin-top: 0;}
+#footer{width: 1350px;margin-top: 0;padding-left: 0}
 
 #left_item_box{background: rgb(81,171,27);margin-top: 17px;}
 #right_item_yxzl{height: auto;}
@@ -29,7 +29,7 @@
 }
 
 .page_content #main_left{
-    margin-top: 5px;
+    margin-top: 2px;
 }
 .right_item_title{padding-top: 8px;margin: 8px 10px;}
 
@@ -111,6 +111,8 @@ body a,body a:visited,.crumbs a,.crumbs a:visited{
     font-size: 16px;}
 
 
+.list_c a{color: #b4cdd3;}
+.pages .a1{float: left;margin-left: 30px;}
 
 /** Carousel  **/
 #pic_ad{position: relative;}

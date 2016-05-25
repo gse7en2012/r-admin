@@ -56,7 +56,8 @@ const ActivityApi = {
             author:req.body.author,
             activity_id:req.body.activity_id,
             img:req.body.img,
-            link:req.body.link
+            link:req.body.link,
+            sort:req.body.sort
         };
         return Controller.Activity.editActivity(activity).then(
             r=>Helpers.resSuccess(res, r),

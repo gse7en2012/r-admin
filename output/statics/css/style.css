@@ -108,7 +108,7 @@ img {border:none}
     background: url(../images/btn_top_link_activity_hover.png?v=20150815);
 }
 
-#download_box{margin-top: -5px;}
+#download_box{margin-top: -5px;height:356px;}
 
 
 #download_box .tab_link {
@@ -296,7 +296,7 @@ img {border:none}
     display: inline-block;
     *display:inline;
     *zoom:1;
-    float:left;
+
     padding-top: 20px;
     padding-bottom: 24px;
     margin-left: 10px;
@@ -440,12 +440,11 @@ img {border:none}
 .list_c {
     float:right;
     font-size: 12px;
-    font-family: 宋体;
     line-height: 14px;
-    color:#000;
+    color:#b4cdd3;
     text-align: left;
-    margin-right: 40px;
-    margin-top:20px;
+    /*margin-right: 10px;*/
+    margin-top:34px;
     text-decoration: underline;
 }
 
@@ -455,7 +454,7 @@ img {border:none}
     padding-left:10px;
     border:1px solid #094F1D;
     border-top:0px solid #094F1D;
-    margin-top:-23px;
+    /*margin-top:-23px;*/
     *margin-top:-20px;
     margin-left:26px;
     border-radius:5px;
@@ -778,8 +777,8 @@ img {border:none}
 
 .pages{
 
-    margin-top:80px;
-    *margin-top:150px;
+    margin-top:20px;
+    *margin-top:50px;
     padding-bottom:50px;
 }
 

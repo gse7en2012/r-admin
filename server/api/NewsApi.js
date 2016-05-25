@@ -37,7 +37,8 @@ const NewsApi = {
             uid:req.body.uid||req.adminUid,
             date:req.body.date,
             content:req.body.content,
-            custom_link:req.body.custom_link
+            custom_link:req.body.custom_link,
+            cover:req.body.cover
         };
         return Controller.News.addNews(news).then(
             r=>Helpers.resSuccess(res, r),

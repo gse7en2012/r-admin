@@ -39,7 +39,7 @@ html, button, input, select, textarea { font-family: sans-serif; color: #222; }
    ========================================================================== */
 
 a { color: #069deb; }
-a:hover { color: #000; }
+/*a:hover { color: #000; }*/
 a:focus { outline: 0; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */

@@ -3,36 +3,36 @@
  */
 'use strict';
 
-angular.module('RDash').controller('NewsEditCtrl', ['$scope', '$cookieStore','$stateParams', 'newsApiService', NewsEditCtrl]);
+angular.module('RDash').controller('NewsEditCtrl', ['$scope', '$cookieStore', '$stateParams', 'newsApiService', NewsEditCtrl]);
 
-function NewsEditCtrl($scope, $cookieStore,$stateParams, newsApiService) {
-    const newsId=$stateParams.news_id;
+function NewsEditCtrl($scope, $cookieStore, $stateParams, newsApiService) {
+    const newsId = $stateParams.news_id;
 
-    newsApiService.getNewsDetails(newsId).then((data)=>{
-        $scope.content=data.result.content;
-        $scope.title=data.result.title;
-        $scope.author=data.result.author;
-        $scope.date=moment(data.result.date).format('YYYY-MM-DD');
+    newsApiService.getNewsDetails(newsId).then((data)=> {
+        $scope.content = data.result.content;
+        $scope.title   = data.result.title;
+        $scope.author  = data.result.author;
+        $scope.date    = moment(data.result.date).format('YYYY-MM-DD');
     });
 
     $scope.ct = {
         //这个很重要一定为空(图片的前缀)
-        imagePath : "",
+        imagePath: "",
         //server 上传接口
-        imageUrl : "/upload"
+        imageUrl: "/upload"
     };
 
-    $scope.edit=()=>{
+    $scope.edit = ()=> {
         newsApiService.editNews({
-            title:$scope.title,
-            author:$scope.author,
-            uid:1,
-            date:new Date(),
-            content:$scope.content,
-            news_id:newsId
-        }).then(()=>{
+            title: $scope.title,
+            author: $scope.author,
+            uid: 1,
+            date: new Date(),
+            content: $scope.content,
+            news_id: newsId
+        }).then(()=> {
             alert('修改成功!');
-            location.href='/#/news'
+            location.href = '/#/news'
         })
     }
 }
