@@ -465,7 +465,7 @@ img {border:none}
 }
 
 #show_content{
-    padding-left:10px;border:1px solid #094F1D;border-top:0px solid #094F1D;margin-top:80px;*margin-top:-20px;margin-left:28px;border-radius:5px; width:718px;*width:700px;background:#FFF;
+    border:1px solid #094F1D;border-top:0px solid #094F1D;margin-top:80px;*margin-top:-20px;margin-left:28px;border-radius:5px; width:718px;*width:700px;background:#FFF;
 }
 #soc {
     margin-top: 5px;

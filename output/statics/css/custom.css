@@ -5,12 +5,12 @@
 #main_right{width: 298px;}
 #footer{width: 1350px;margin-top: 0;padding-left: 0}
 
-#left_item_box{background: rgb(81,171,27);margin-top: 17px;}
+.left_item_box{background: rgb(81,171,27);margin-top: 17px;}
 #right_item_yxzl{height: auto;}
 #friend_link{margin-left: 8px;}
 
 .news_list_item,.news_title a,.news_title a:visited,.line_c{color: #b4cdd3;}
-#left_item_box {
+.left_item_box {
     background: #1d2326;
     margin-top: 17px;
     padding-bottom: 30px;
