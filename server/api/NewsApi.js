@@ -59,7 +59,8 @@ const NewsApi = {
             uid:req.body.uid,
             date:req.body.date,
             news_id:req.body.news_id,
-            content:req.body.content
+            content:req.body.content,
+            cover:req.body.cover
         };
         return Controller.News.editNews(news).then(
             r=>Helpers.resSuccess(res, r),

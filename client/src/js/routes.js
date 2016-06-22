@@ -107,6 +107,18 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/logs',
                 templateUrl: 'templates/logs/loginLogsList.html'
             })
+            .state('video', {
+                url: '/video',
+                templateUrl: 'templates/video/videoList.html'
+            })
+            .state('videoAdd', {
+                url: '/video/add',
+                templateUrl: 'templates/video/videoAdd.html'
+            })
+            .state('videoEdit', {
+                url: '/video/edit/:video_id',
+                templateUrl: 'templates/video/videoEdit.html'
+            })
             .state('opLogs', {
                 url: '/logs/op',
                 templateUrl: 'templates/logs/opLogsList.html'

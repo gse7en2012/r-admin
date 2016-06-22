@@ -13,7 +13,7 @@ let mysqlConn = new Seq(DBConfig.tableName, DBConfig.user, DBConfig.password, {
     host: DBConfig.host,
     port: DBConfig.port,
     dialect: 'mysql',
-    logging: false&&console.log,
+    logging: false && console.log,
     omitNull: true,
     maxConcurrentQueries: 150,
     define: {
@@ -26,6 +26,7 @@ let mysqlConn = new Seq(DBConfig.tableName, DBConfig.user, DBConfig.password, {
 });
 
 
+const Video      = mysqlConn.import(__dirname + '/Video');
 const Activity   = mysqlConn.import(__dirname + '/Activity');
 const Links      = mysqlConn.import(__dirname + '/Links');
 const Logs       = mysqlConn.import(__dirname + '/Logs');
@@ -43,6 +44,7 @@ ChannelArt.belongsTo(Channel, {foreignKey: 'channel_id', targetKey: 'channel_id'
 //ShareLog.belongsTo(Users, {foreignKey: 'uid', targetKey: 'uid'});
 //ShareLog.belongsTo(WxArt, {foreignKey: 'art_id', targetKey: 'art_id'});
 
+exports.Video      = Video;
 exports.Activity   = Activity;
 exports.Links      = Links;
 exports.Logs       = Logs;

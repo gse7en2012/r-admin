@@ -1,0 +1,58 @@
+<div data-ng-controller="VideoCtrl">
+    <div class="row">
+        <div class="col-xs-12 col-lg-1 col-md-2">
+            <a href="#/video/add" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span>添加视频</a>
+        </div>
+
+    </div>
+    <!--<div class="alert alert-info" role="alert"> <strong>注意!</strong> 活动图的显示尺寸为700X330.请按该比例上传图片,尺寸不符合则按规则裁剪. </div>-->
+
+    <div class="row">
+        <style>
+            .thumbnail-box{
+                height: auto;
+                padding-bottom:0;
+                overflow: hidden;
+                width: 100%;
+            }
+            .video-js{
+                margin: auto;
+            }
+            .video-js .vjs-big-play-button{
+                left: 50%;
+                margin-left: -1em;
+                top: 50%;
+                margin-top: -0.75em;
+                width: 2em;
+            }
+        </style>
+        <div class="col-sm-6 col-md-4" ng-repeat="data in dataList">
+            <div class="thumbnail">
+                <div class="thumbnail-box">
+                    <video class="video-js" controls preload="auto" data-setup="{}" style="margin: auto;"  width="350" >
+                        <source ng-src="{{data.link}}" type='video/mp4'>
+                        <p class="vjs-no-js">
+                            浏览器版本太低,请升级到
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">支持HTML5的浏览器</a>
+                        </p>
+                    </video>
+
+                </div>
+                <div class="caption">
+                    <h3>{{data.title}}</h3>
+                    <p><i class="fa fa-sort-numeric-asc"></i>展示顺序: {{data.sort}} (<span class="text-danger">数字大者靠前.</span>) </p>
+
+
+                    <p><i class="fa fa-link"></i>视频描述: {{data.title}}</p>
+                    <p><i class="fa {{data.is_show==1?'fa-check':'fa-close'}}"></i>视频状态: <span ng-class="{'text-primary':data.is_show==1,'text-danger':data.is_show==0}">{{data.is_show==1?'开启中':'已关闭'}}</span></p>
+                    <p><i class="fa fa-calendar"></i>创建时间: {{data.createdAt}}</p>
+                    <p>
+                        <a href="#/video/edit/{{data.video_id}}" class="btn btn-info btn-sm" role="button">编辑</a>
+                        <a ng-click="delete(data.video_id)"  ng-show="data.is_show==1" class="btn btn-danger btn-sm">关闭</a>
+                        <a ng-click="open(data.video_id)"  ng-show="data.is_show==0" class="btn btn-success btn-sm">开启</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

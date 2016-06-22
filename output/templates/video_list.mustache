@@ -3,29 +3,34 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=7"/>
-    <title>{{title}} - 《炼妖壶传奇》官方网站</title>
+    <title>高策略实时对战卡牌《炼妖壶传奇》CG视频首曝 - 《炼妖壶传奇》官方网站</title>
     <meta name="keywords" content="《炼妖壶传奇》官方网站">
-    <meta name="description" content="{{pre}}">
-    <link href="/statics/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="/statics/css/custom.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="/statics/js/scroll.js"></script>
+    <meta name="description" content="首款策略型实时对战卡牌游戏--《炼妖壶传奇》4月16日上午10点将开启全新删档内测！《炼妖壶传奇》揉合了回合RPG、策略卡牌、TCG等多种游戏因素，创造出一种全">
+    <link href="statics/css/video-js.min.css" rel="stylesheet" type="text/css">
+    <link href="statics/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="statics/css/custom.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="statics/js/jquery.min.js"></script>
+    <script type="text/javascript" src="statics/js/jquery.sgallery.js"></script>
+    <script type="text/javascript" src="statics/js/scroll.js"></script>
+    <script type="text/javascript" src="statics/js/index.js"></script>
+    <script type="text/javascript" src="statics/js/video.min.js"></script>
 </head>
 <body>
 <div id="main">
-    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="/statics/images/back_top.png" alt="返回顶部"></div>
+    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="http://www.game.com/statics/images/back_top.png" alt="返回顶部"></div>
 
     <div id="head_top">
         <div id="banner">
             <ul class="c-af ">
                 <li class="split_01"></li>
-                <li class="index">
+                <li class="index cur">
                     <a href="/index.html">
                         <div class="tab_link"></div>
                     </a>
                 </li>
                 <li class="split_01"></li>
                 <li class="news">
-                    <a href="/news">
+                    <a href="/news/index.html">
                         <div class="tab_link"></div>
                     </a>
                 </li>
@@ -50,42 +55,44 @@
         </div>
     </div>
 
-    <div id="main_content" class="page_content">
+    <div id="main_content" class="page_content" >
 
         <div id="main_left">
-
-            <div id="news_list_title">
-                <!--<img src="/statics/images/news_title_s.png" style="float: left;margin-top: 35px;margin-left: 10px"/>-->
-                {{title_desc}}
+            <style>
+                #show_content{text-align: left;overflow: hidden;clear: both;}
+                #show_content .item{float:left;margin:30px;width: 300px;text-align: center;}
+                #show_content .item p{height: 24px;overflow: hidden;}
+            </style>
+            <div id="news_list_title" style="height: 82px;margin-top: -20px;">
+                <!--<img src="http://www.game.com/statics/images/news_title_s.png" style="float: left;margin-top: 35px;margin-left: 10px"/>-->
+                更多视频
             </div>
-            <div id="show_content" >
-                <!--<div class="crumbs"><a href="/" >首页</a><span> &gt; </span><a href="/news">新闻</a></div>-->
-                <div style="border-bottom:1px dashed #BCB8B9;">
-                    <br>
-
-                    <h1>{{title}}</h1><br/>
-                    <span>[{{date}}]</span>
+            <div id="show_content" style="border-radius: 0;">
+{{#video}}
+                <div class="item">
+                    <video class="video-js" controls preload="auto" width="300" height="248"
+                           data-setup="{}">
+                        <source src="{{link}}" type='video/mp4'>
+                        <p class="vjs-no-js">
+                            浏览器版本太低,请升级到
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">支持HTML5的浏览器</a>
+                        </p>
+                    </video>
+                    <p>{{title}}</p>
                 </div>
-                <div class="content" style="border-bottom:1px dashed #BCB8B9; margin-top:20px;overflow:hidden;">
-                    {{{content}}}
-                </div>
-                <p class="f14">
-                    {{#last_link}}<strong>上一篇：</strong><a href="{{last_link}}">{{last_title}}</a><br/>{{/last_link}}
-                    {{#next_link}}<strong>下一篇：</strong><a href="{{next_link}}">{{next_title}}</a>{{/next_link}}
-                </p>
+{{/video}}
             </div>
-
         </div>
 
         <div id="main_right">
             <div id="qr_box">
                 <div class="right_item_title">
-                    <img src="/statics/images/t_img_kfzx.png"/>
+                    <img src="http://www.game.com/statics/images/t_img_kfzx.png"/>
                 </div>
                 <a target="_blank"
                    href="http://shang.qq.com/wpa/qunwpa?idkey=8fb6474fa33e5ad382fff20ec8c87a6ceb2e660401baf245c89d3027ba0a1890"
                    alt="点击直接加入QQ群" title="点击直接加入QQ群">
-                    <img src='/statics/images/qrcode.jpg'>
+                    <img src='http://www.game.com/statics/images/qrcode.jpg'>
                 </a>
             </div>
             <div class="right_item_box">
@@ -119,7 +126,7 @@
         <span class="tip_title">健康游戏公告：</span>抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
     </div>
 </div>
-<div  class="footer-copy">
+<div class="footer-copy">
     <div class="left">
         <img src="statics/images/logo.png">
     </div>
@@ -133,4 +140,4 @@
 </div>
 </body>
 </html>
- 
+

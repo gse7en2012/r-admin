@@ -182,7 +182,7 @@ const NewsController = {
                         news.dataValues.last_link  = item.custom_link || item.s_link;
                     }
                 });
-                Staticize.compileInsidePage('news', news.news_id, news.dataValues)
+                Staticize.compileInsidePage('news', news.news_id, news.dataValues);
             });
         })
     },

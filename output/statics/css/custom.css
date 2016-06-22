@@ -38,6 +38,7 @@
     position: absolute;
     right: 18px;
     bottom: 20px;
+    text-decoration: none;
 }
 #news_list_title{position: relative;}
 .right_item_title{position: relative}
@@ -189,4 +190,13 @@ body a,body a:visited,.crumbs a,.crumbs a:visited{
     box-shadow: 0 0 2px #F0EFE7;
 }
 
-
+.video-js{
+    margin: auto;
+}
+.video-js .vjs-big-play-button{
+    left: 50%;
+    margin-left: -1em;
+    top: 50%;
+    margin-top: -0.75em;
+    width: 2em;
+}

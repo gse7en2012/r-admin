@@ -6,6 +6,7 @@ module.exports = {
     News: require('./News'),
     NewsAct: require('./NewsAct'),
     Activity: require('./Activity'),
+    Video: require('./Video'),
     Links: require('./Link'),
     Info: require('./Info'),
     Strategy: require('./Strategy'),

@@ -14,7 +14,7 @@ const Logs     = require('./Logs');
 const Auth     = require('./Auth');
 const Channel  = require('./Info');
 const Mobile   = require('./Mobile');
-
+const Video   = require('./Video');
 const controller = {
     News: News,
     NewsAct: NewsAct,
@@ -24,7 +24,8 @@ const controller = {
     Links: Links,
     Logs: Logs,
     Channel: Channel,
-    Mobile: Mobile
+    Mobile: Mobile,
+    Video:Video
 };
 
 

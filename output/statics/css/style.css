@@ -352,25 +352,25 @@ img {border:none}
     text-align:left;
 }
 .list_title a{
-    color:gray;
+    color:#b4cdd3;
 }
 
 .list_title a:hover{
     color:#87C647;
 }
 .list_title a:visited{
-    color:gray;
+    color:#b4cdd3;
 }
 
 .news_title a{
-    color:gray;
+    color:#b4cdd3;
 }
 
 .news_title a:hover{
     color:#87C647;
 }
 .news_title a:visited{
-    color:gray;
+    color:#b4cdd3;
 }
 
 
@@ -786,3 +786,8 @@ img {border:none}
     color:#FFF;
     text-decoration:none;
 }
+
+
+.footer-copy{ margin-bottom:20px;color:#d6d6d6;overflow:hidden; }
+.footer-copy .left{width:40%;float:left;text-align:right}
+.footer-copy .right{width:60%;float:left;text-align:left}

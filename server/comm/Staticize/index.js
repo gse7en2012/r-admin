@@ -9,7 +9,6 @@ const Controller = require('../../controller');
 const moment     = require('moment');
 const config     = require('../config').outputConfig;
 
-
 mu.root = config.rootDir;
 
 function mkdirRecursive(filename) {
@@ -112,6 +111,27 @@ const StaticizeController = {
             );
         })
     },
+
+
+
+    compileVideoList(){
+        return Controller.Video.getVideoList(1,300,true).then((result)=>{
+            mu.compileAndRender('video_list.mustache', {video:result.dataList}).pipe(
+                fs.createWriteStream(config.outputDir + '/video_list.html')
+            );
+        })
+    },
+    compileVideoIndex(){
+        this.compileVideoList();
+        console.log('video render');
+        return Controller.Video.getCoverVideo().then((result)=>{
+            mu.compileAndRender('video.mustache', {videoUrl:result}).pipe(
+                fs.createWriteStream(config.outputDir + '/views/video.html')
+            );
+        })
+
+    },
+
     compileStrategy(){
         return Controller.Strategy.getStrategyList(1, 8).then((result)=> {
             const dataInfo       = {strategy: result.dataList};
@@ -251,16 +271,16 @@ const StaticizeController = {
     },
     compileAllSite(){
 
-        StaticizeController.compileActivity();
-        StaticizeController.compileActivityForMobile();
-        StaticizeController.compileNews();
-        StaticizeController.compileNewsForMobile();
-        StaticizeController.compileCarousel();
-        StaticizeController.compileInfo();
-        StaticizeController.compileStrategy();
-        StaticizeController.compileStrategyForMobile();
-        StaticizeController.compileLinks();
-
+        this.compileActivity();
+        this.compileActivityForMobile();
+        this.compileNews();
+        this.compileNewsForMobile();
+        this.compileCarousel();
+        this.compileInfo();
+        this.compileStrategy();
+        this.compileStrategyForMobile();
+        this.compileLinks();
+        this.compileVideoIndex();
 
         Controller.News.generateAllNewsStaticPage();
         Controller.NewsAct.generateAllNewsActStaticPage();
@@ -276,6 +296,6 @@ const StaticizeController = {
 };
 
 //StaticizeController.compileIndex();
-
+//StaticizeController.compileAllSite()
 
 module.exports = StaticizeController;

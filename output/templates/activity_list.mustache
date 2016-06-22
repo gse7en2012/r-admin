@@ -6,16 +6,13 @@
     <title>活动列表 - 《炼妖壶传奇》官方网站</title>
     <meta name="keywords" content="海量,福利">
     <meta name="description" content="{{pre}}">
-    <link href="{{resLocation}}/statics/css/style.css" rel="stylesheet" type="text/css"/>
-    <link href="{{resLocation}}/statics/css/custom.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="{{resLocation}}/statics/js/jquery.min.js"></script>
-    <script type="text/javascript" src="{{resLocation}}/statics/js/jquery.sgallery.js"></script>
-    <script type="text/javascript" src="{{resLocation}}/statics/js/scroll.js"></script>
-    <script type="text/javascript" src="{{resLocation}}/statics/js/index.js"></script>
+    <link href="/statics/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/statics/css/custom.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/statics/js/scroll.js"></script>
 </head>
 <body>
 <div id="main">
-    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="{{resLocation}}/statics/images/back_top.png" alt="返回顶部"></div>
+    <div style="DISPLAY: none" id=goTopBtn><img border=0 src="/statics/images/back_top.png" alt="返回顶部"></div>
 
     <div id="head_top">
         <div id="banner">
@@ -80,7 +77,7 @@
         <div id="main_left">
             <div id="news_list">
                 <div id="news_list_title">
-                    <img src="{{resLocation}}/statics/images/act_list_title.png" style="float: left;margin-top: 35px;margin-left: 10px"/>
+                    <img src="/statics/images/act_list_title.png" style="float: left;margin-top: 35px;margin-left: 10px"/>
                 </div>
                 <div id="list_content">
                     {{#news_list}}
@@ -99,7 +96,7 @@
                     </div>
                     {{/news_list}}
                     <div class="pages">
-                        <a class="a1">{{total}}条</a>
+                        <!--<a class="a1">{{total}}条</a>-->
                         {{#prevShow?}}
                             <a href="{{firstLink}}">首页</a>
                         <a href="{{prevLink}}" class="a1">上一页</a>
@@ -123,12 +120,12 @@
 
             <div id="qr_box">
                 <div class="right_item_title">
-                    <img src="{{resLocation}}/statics/images/t_img_kfzx.png"/>
+                    <img src="/statics/images/t_img_kfzx.png"/>
                 </div>
                 <a target="_blank"
                    href="http://shang.qq.com/wpa/qunwpa?idkey=8fb6474fa33e5ad382fff20ec8c87a6ceb2e660401baf245c89d3027ba0a1890"
                    alt="点击直接加入QQ群" title="点击直接加入QQ群">
-                    <img src='{{resLocation}}/statics/images/qrcode.jpg'>
+                    <img src='/statics/images/qrcode.jpg'>
                 </a>
             </div>
             <div class="right_item_box">
@@ -157,7 +154,18 @@
             <span class="tip_title">宁静海健康游戏公告：</span>抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活
         </div>
     </div>
-    <p style="margin-bottom:20px;color:#d6d6d6;">Copyright&copy;2014-2016 广州宁静海信息科技有限公司 All Rights Reserved.</p>
+    <div  class="footer-copy">
+        <div class="left">
+            <img src="statics/images/logo.png">
+        </div>
+        <div class="right">
+            <a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备16043020号</a>
+            <a href="statics/images/www.jpg" target="_blank">粤网文[2016]0915-135号</a>
+            <br>
+            地址：广州市天河区中山大道西140号华港商务大厦14楼   电话:020-29174401<br>
+            Copyright&copy;2014-2016 广州宁静海信息科技有限公司 All Rights Reserved.
+        </div>
+    </div>
 </div>
 </body>
 </html>
