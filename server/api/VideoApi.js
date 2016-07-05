@@ -55,7 +55,8 @@ const VideoApi = {
             author:req.body.author,
             video_id:req.body.video_id,
             link:req.body.link,
-            sort:req.body.sort
+            sort:req.body.sort,
+            desc:req.body.desc
         };
         return Controller.Video.editVideo(video).then(
             r=>Helpers.resSuccess(res, r),

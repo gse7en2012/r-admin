@@ -42,8 +42,8 @@
                     <h3>{{data.title}}</h3>
                     <p><i class="fa fa-sort-numeric-asc"></i>展示顺序: {{data.sort}} (<span class="text-danger">数字大者靠前.</span>) </p>
 
-
-                    <p><i class="fa fa-link"></i>视频描述: {{data.title}}</p>
+                    <p><i class="fa fa-link"></i>视频标题: {{data.title}}</p>
+                    <p><i class="fa fa-link"></i>视频描述: {{data.desc}}</p>
                     <p><i class="fa {{data.is_show==1?'fa-check':'fa-close'}}"></i>视频状态: <span ng-class="{'text-primary':data.is_show==1,'text-danger':data.is_show==0}">{{data.is_show==1?'开启中':'已关闭'}}</span></p>
                     <p><i class="fa fa-calendar"></i>创建时间: {{data.createdAt}}</p>
                     <p>

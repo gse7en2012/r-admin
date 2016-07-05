@@ -13,6 +13,7 @@ function VideoEditCtrl($scope, $state,$stateParams, $timeout,activityApiService)
         $scope.title=data.result.title;
         $scope.author=data.result.author;
         $scope.sort=data.result.sort;
+        $scope.desc=data.result.desc;
         $scope.video={
             link:data.result.link
         }
@@ -30,7 +31,8 @@ function VideoEditCtrl($scope, $state,$stateParams, $timeout,activityApiService)
             title:$scope.title,
             author:$scope.author,
             sort:$scope.sort,
-            video_id:videoId
+            video_id:videoId,
+            desc:$scope.desc
         }).then(()=>{
             alert('修改成功!');
             location.href='/#/video';

@@ -32,7 +32,8 @@ function VideoAddCtrl($scope, $cookieStore, activityApiService,FileUploader) {
             title:$scope.title,
             author:$scope.author,
             link:$scope.videoUrl,
-            sort:$scope.sort
+            sort:$scope.sort,
+            desc:$scope.desc
         }).then(()=>{
             alert('发布成功!');
             location.href='/#/video'

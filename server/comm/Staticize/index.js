@@ -113,19 +113,26 @@ const StaticizeController = {
     },
 
 
-
+    compileVideoPage(id){
+        return Controller.Video.getVideo(id).then((result)=>{
+            mu.compileAndRender('video_page.mustache', result).pipe(
+                fs.createWriteStream(config.outputDir + '/videopage/'+id+'.html')
+            );
+        })
+    },
     compileVideoList(){
         return Controller.Video.getVideoList(1,300,true).then((result)=>{
-            mu.compileAndRender('video_list.mustache', {video:result.dataList}).pipe(
-                fs.createWriteStream(config.outputDir + '/video_list.html')
-            );
+            const id=result.dataList.map((item)=>{return item.video_id});
+            id.forEach((i)=>{
+                this.compileVideoPage(i)
+            })
         })
     },
     compileVideoIndex(){
         this.compileVideoList();
         console.log('video render');
         return Controller.Video.getCoverVideo().then((result)=>{
-            mu.compileAndRender('video.mustache', {videoUrl:result}).pipe(
+            mu.compileAndRender('video.mustache', result).pipe(
                 fs.createWriteStream(config.outputDir + '/views/video.html')
             );
         })
@@ -297,5 +304,6 @@ const StaticizeController = {
 
 //StaticizeController.compileIndex();
 //StaticizeController.compileAllSite()
+//StaticizeController.compileVideoList();
 
 module.exports = StaticizeController;

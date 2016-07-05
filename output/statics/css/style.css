@@ -36,6 +36,8 @@ body {
     font-size: 14px;
     line-height: 24px;
 }
+
+a{color: #d6d6d6;}
 img {border:none}
 
 #banner {
@@ -789,5 +791,6 @@ img {border:none}
 
 
 .footer-copy{ margin-bottom:20px;color:#d6d6d6;overflow:hidden; }
+.footer-copy a,.footer-copy a:visited{color: #d6d6d6;}
 .footer-copy .left{width:40%;float:left;text-align:right}
 .footer-copy .right{width:60%;float:left;text-align:left}

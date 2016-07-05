@@ -10,6 +10,7 @@ module.exports = (seq, DataType)=> {
         author: {type: DataType.TEXT},
         link: {type: DataType.TEXT},
         sort:{type:DataType.INTEGER},
+        desc:{type:DataType.INTEGER},
         is_show:{type:DataType.INTEGER,defaultValue:1}
     }, {
         timestamps: true,

@@ -20,7 +20,8 @@ const $videoHelper = {
                 author: item.author,
                 link: item.link,
                 sort: item.sort,
-                is_show: item.is_show
+                is_show: item.is_show,
+                desc:item.desc
             });
         });
         return {
@@ -33,6 +34,30 @@ const $videoHelper = {
 
 
 const VideoController = {
+    getVideo(id){
+        return DataBaseModel.Video.findById(id).then((video)=>{
+            return DataBaseModel.Video.findAll({
+                attributes:['video_id','title']
+            }).then((list)=>{
+                const idList=list.map((row)=>{return {id:'/videopage/'+row.video_id+'.html',title:row.title}});
+                const idCol=[];
+                idList.forEach((r,index)=>{
+                    const flag=index%4;
+                    if(flag==0){
+                        idCol[Math.floor(index/4)]=[{dd:r}];
+                    }else{
+                        idCol[Math.floor(index/4)].push({dd:r});
+                    }
+                });
+
+                return {
+                    list:idCol.map((rr)=>{return {de:rr}}),
+                    video:video.dataValues
+                }
+            })
+        })
+    },
+
     getVideoList(page, pageS, isShow){
         if (!page || _.isNaN(Number(page))) return Promise.reject('参数错误!');
         const dPage    = page < 1 ? 1 : Number(page);
@@ -58,6 +83,7 @@ const VideoController = {
             author: video.author,
             link: video.link,
             sort: video.sort,
+            desc:video.desc,
             is_show: video.is_show
         });
         return newsInstance.save().then(()=>{
@@ -102,11 +128,13 @@ const VideoController = {
             limit:1
         }).then((r)=>{
             if(r){
-                return r.link;
+                return {link:r.link,id:r.video_id};
             }
         })
     }
 };
+
+//VideoController.getVideo(1).then((r)=>{console.log(JSON.stringify(r));});
 
 //NewsController.getNewsList(1).then((r)=> {console.log(r);});
 //NewsController.addNews({

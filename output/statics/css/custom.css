@@ -66,9 +66,14 @@
     min-height: 600px;
 }
 
-body a,body a:visited,.crumbs a,.crumbs a:visited{
+/*body a,body a:hover,.crumbs a,.crumbs a:hover{*/
+    /*color: #b4cdd3;*/
+/*}*/
+
+body .more-btn:hover{
     color: #b4cdd3;
 }
+
 .crumbs{
     margin: 10px;
     text-align: left;
