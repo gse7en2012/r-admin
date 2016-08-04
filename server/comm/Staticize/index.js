@@ -23,6 +23,19 @@ function mkdirRecursive(filename) {
 }
 
 const StaticizeController = {
+
+    compileCodeBtn(btn1, btn2, btn3){
+        let s;
+        mu.compileAndRender('code.mustache', {btn1: btn1, btn2: btn2, btn3: btn3}).pipe(
+            s = fs.createWriteStream(config.outputDir + '/views/code.html')
+        );
+        s.on('finish', ()=> {
+            console.log('code render end!');
+        });
+
+    },
+
+
     compileNews(){
         return Controller.News.getNewsList(1, 4).then((result)=> {
             const dataInfo       = {news: result.dataList};
@@ -74,6 +87,7 @@ const StaticizeController = {
             s.on('finish', ()=> {
                 console.log('activity render end!');
             });
+            StaticizeController.compileActivityForMobile();
         })
     },
     compileActivityForMobile(){
@@ -101,7 +115,6 @@ const StaticizeController = {
     },
 
 
-
     compileCarousel(){
         return Controller.Activity.getActivityList(1, 5, true).then((result)=> {
             const dataInfo       = {activitys: result.dataList};
@@ -114,16 +127,16 @@ const StaticizeController = {
 
 
     compileVideoPage(id){
-        return Controller.Video.getVideo(id).then((result)=>{
+        return Controller.Video.getVideo(id).then((result)=> {
             mu.compileAndRender('video_page.mustache', result).pipe(
-                fs.createWriteStream(config.outputDir + '/videopage/'+id+'.html')
+                fs.createWriteStream(config.outputDir + '/videopage/' + id + '.html')
             );
         })
     },
     compileVideoList(){
-        return Controller.Video.getVideoList(1,300,true).then((result)=>{
-            const id=result.dataList.map((item)=>{return item.video_id});
-            id.forEach((i)=>{
+        return Controller.Video.getVideoList(1, 300, true).then((result)=> {
+            const id = result.dataList.map((item)=> {return item.video_id});
+            id.forEach((i)=> {
                 this.compileVideoPage(i)
             })
         })
@@ -131,7 +144,7 @@ const StaticizeController = {
     compileVideoIndex(){
         this.compileVideoList();
         console.log('video render');
-        return Controller.Video.getCoverVideo().then((result)=>{
+        return Controller.Video.getCoverVideo().then((result)=> {
             mu.compileAndRender('video.mustache', result).pipe(
                 fs.createWriteStream(config.outputDir + '/views/video.html')
             );

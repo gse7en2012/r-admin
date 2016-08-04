@@ -1,0 +1,160 @@
+<style>
+    .tc-bg { position: fixed; display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.6;
+        -moz-opacity: 0.6;
+        filter: alpha(opacity=60);
+        z-index: 1; }
+
+    .tc-main {
+        display: none;
+        width: 490px;
+        height: 180px;
+        position: fixed;
+        top: 50%;
+        margin-top: -90px;
+        left: 50%;
+        margin-left: -245px;
+        background: #1d2326;
+        color: #b4cdd3;
+        z-index: 999;
+        text-align: center;
+    }
+
+    .tc-header {
+        text-align: left;
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .tc-btn-box {
+        overflow: hidden;
+    }
+
+    .tc-btn {
+        background: url('../statics/images/pay_submit_btn.png') no-repeat;
+        width: 136px;
+        height: 48px;
+        display: inline-block;
+        text-align: center;
+        line-height: 46px;
+        font-size: 16px;
+        color: #fff;
+        margin-left: 8px;
+        margin-right: 8px;;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .hide { display: none; }
+
+    .tc-bot { position: absolute; bottom: 15px; text-decoration: underline; width: 100%; text-align: center; }
+
+    .tc-btn2,.copy-btn { cursor: pointer; padding: 10px; }
+
+    .tc-code { font-size: 14px; color: #d6d6d6; margin-top: -10px; }
+
+    .code { font-size: 24px;
+        line-height: 1.5;
+        color: rgb(53, 143, 175);
+        margin: 0 auto;
+        width: 70%;
+        background: #fff; margin-top: 5px; }
+
+    .tc-close { color: rgb(53, 143, 175); position: absolute; font-size: 20px; right: 10px; top: 10px; text-decoration: none; }
+</style>
+
+<div class="tc-bg"></div>
+<div class="tc-main">
+    <div class="tc-header">
+        礼包领取
+        <a href="javascript:;" class="tc-close">×</a>
+    </div>
+    <div class="tc-btn-box">
+        {{#btn1}}<a class="tc-btn" id="btn1" data-type="1">{{btn1}}</a>{{/btn1}}
+        {{#btn2}}<a class="tc-btn" id="btn2" data-type="2">{{btn2}}</a>{{/btn2}}
+        {{#btn3}}<a class="tc-btn" id="btn3" data-type="3">{{btn3}}</a>{{/btn3}}
+    </div>
+    <div class="tc-code-box hide">
+        <p class="tc-code">邀请码为</p>
+
+        <p class="code">xxxxx</p>
+
+        <p class="tc-error hide">出错了</p>
+
+        <p class="tc-bot"><a class="copy-btn" data-clipboard-text="xxxxxx">
+            复制
+        </a><a class="tc-btn2">返回</a></p>
+    </div>
+
+</div>
+
+
+<script>
+    new Clipboard('.copy-btn');
+    var codeHash = [];
+    $(function () {
+
+        $('#get-code').click(function () {
+            $('.tc-bg,.tc-main').show();
+        });
+
+        $('.tc-close').click(function () {
+            $('.tc-bg,.tc-main').hide();
+        });
+
+        $('.copy-btn').click(function(){
+            alert('复制成功!')
+        });
+
+
+        $('.tc-btn').click(function () {
+            var db = Number($(this).data('type'));
+            var showCode;
+            if (!codeHash[db]) {
+                $.get('/njh/api/code?db=' + db).then(function (data) {
+                    codeHash[db] = data.result;
+                    showCode=data.result;
+                    $('.copy-btn').show().attr('data-clipboard-text',showCode);
+                    $('.code').text(showCode).removeClass('hide');
+                    $('.tc-code').removeClass('hide');
+                    $('.tc-btn-box').addClass('hide');
+                    $('.tc-code-box').removeClass('hide');
+                    $('.tc-error').addClass('hide');
+                }).fail(function(e){
+                    $('.copy-btn').hide();
+                    $('.tc-btn-box').addClass('hide');
+                    $('.tc-error').text(JSON.parse(e.responseText).msg).removeClass('hide');
+                    $('.tc-code-box').removeClass('hide');
+                    $('.code,.tc-code').addClass('hide');
+                })
+            } else {
+                showCode=codeHash[db];
+                $('.copy-btn').show().attr('data-clipboard-text',showCode);
+                $('.code').text(showCode).removeClass('hide');
+                $('.tc-btn-box').addClass('hide');
+                $('.tc-code-box').removeClass('hide');
+            }
+        });
+
+
+//            $("body").on("click", ".copy-btn", function(/* ClipboardEvent */ e) {
+//                console.log($('.code').text());
+//                e.clipboardData.clearData();
+//                e.clipboardData.setData("text/plain", $('.code').text());
+//                e.preventDefault();
+//                alert('success!')
+//            });
+
+
+        $('.tc-btn2').click(function () {
+            $('.tc-btn-box').removeClass('hide');
+            $('.tc-code-box').addClass('hide');
+        })
+    })
+
+</script>

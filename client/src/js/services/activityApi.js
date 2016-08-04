@@ -26,4 +26,8 @@ angular.module('RDash').service('activityApiService', ['$http', '$q', function (
     this.getVideoDetails=(videoId)=>httpRequest({method:'GET',url:`/video/details?video_id=${videoId}`});
     this.editVideo = (news)=>httpRequest({method: 'POST', url: `/video/edit`, data: news});
 
+
+    this.getDataBaseStatus=(db)=>httpRequest({method: 'GET', url: `/code/status?db=${db}`});
+    this.uploadFile=(data)=>httpRequest({method: 'POST', url: `/code/upload`,data:data});
+    this.getCodeBtn=()=>httpRequest({method: 'GET', url: `/code/config`})
 }]);

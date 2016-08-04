@@ -11,5 +11,6 @@ module.exports = {
     Info: require('./Info'),
     Strategy: require('./Strategy'),
     Logs: require('./Logs'),
-    Mobile:require('./Mobile')
+    Mobile:require('./Mobile'),
+    Code:require('./Code')
 };

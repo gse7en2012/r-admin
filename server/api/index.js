@@ -13,7 +13,8 @@ const serviceApi = {
     NewsActApi: require('./NewsActApi'),
     InfoApi:require('./InfoApi'),
     MobileApi:require('./MobileApi'),
-    VideoApi: require('./VideoApi')
+    VideoApi: require('./VideoApi'),
+    CodeApi:require('./CodeApi')
 };
 
 module.exports = serviceApi;

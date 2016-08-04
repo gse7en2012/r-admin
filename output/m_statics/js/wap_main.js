@@ -1,5 +1,4 @@
 
-var dialog_gift = null;
 
 $(function () {
 
@@ -60,30 +59,9 @@ $(function () {
         }
     });
 
-    dialog_gift = new Dialog($("#dialog_game_gift_content").html(), {
-        id: 'dialog_game_gift_content'
-    });
-
 
 });
 
 
-
-function get_gift(id){
-    $.ajax({
-        type: "post",
-        url: '/index.php?m=wap&c=gift_code&a=getGift_cache',
-        data:"category="+id,
-        dataType: "json",
-        success: function (data) {
-            msg = data['msg'];
-            $("#getgift_info").html(msg);
-            dialog_gift = new Dialog($("#dialog_game_gift_content").html(), {
-                id: 'dialog_game_gift_content'
-            });
-            dialog_gift.show();
-        },
-    });
-}
 
 

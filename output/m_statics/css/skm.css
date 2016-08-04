@@ -72,6 +72,9 @@ header {
     width: 279px;
     height: 86px;
 }
+.page_bg{
+    background: url(../images/page_bg.jpg);
+}
 
 .ui-btn-d1 {
     position: absolute;
@@ -85,6 +88,13 @@ header {
     top: 800px;
     left: 25px;
     background: url(../images/btn_down_android.png);
+}
+
+.ui-btn-d3{
+    position: absolute;
+    top: 800px;
+    left: 25px;
+    background: url(../images/btn_down_ios.png);
 }
 
 section {

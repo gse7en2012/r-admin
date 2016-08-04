@@ -12,6 +12,7 @@ const compression  = require('compression');
 const multer       = require('multer');
 const routes       = require('./routes');
 const interceptor  = require('./helpers').interceptor;
+const Controller   = require('./Controller');
 
 function uploadMake(dirName) {
     const opts = multer.diskStorage({
@@ -31,6 +32,15 @@ function uploadVideoS(name) {
     });
     return multer({storage: opts});
 }
+function uploadExcelS(name) {
+    const opts = multer.diskStorage({
+        "destination": (req, file, cb)=> {cb(null, 'server/upload')},
+        "filename": (req, file, cb)=> {
+            cb(null, name + '_' + Date.now() + '.' + file.originalname.split('.').reverse()[0])
+        }
+    });
+    return multer({storage: opts});
+}
 
 function uploadImgRes(req, res, key) {
     res.status(200).type('html').send({
@@ -43,15 +53,21 @@ function uploadImgRes(req, res, key) {
     });
 }
 function uploadVideoRes(req, res, key) {
-    res.status(200).type('html').send({
-        "state": "SUCCESS",
-        "url":  key + "/" + req.file.filename,
-        "name": req.file.filename,
-        "originalName": req.file.originalname,
-        "size": req.file.size,
-        "type": '.' + req.file.filename.split('.').reverse()[0]
+
+    return Controller.Code.checkTxtFile(req.file.filename).then((data)=>{
+       return  res.status(200).type('html').send({
+           "state": "SUCCESS",
+           "url": key + "/" + req.file.filename,
+           "name": req.file.filename,
+           "originalName": req.file.originalname,
+           "size": req.file.size,
+           "type": '.' + req.file.filename.split('.').reverse()[0],
+           'msg':data
+       });
     });
+
 }
+
 
 
 const upload         = uploadMake('images');
@@ -60,8 +76,8 @@ const uploadLinks    = uploadMake('links');
 const uploadInfo     = uploadMake('info');
 const uploadNews     = uploadMake('news');
 const uploadVideo    = uploadVideoS('video');
-
-const app = express();
+const uploadExcel    = uploadExcelS('code');
+const app            = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -88,6 +104,7 @@ app.use('/video', routes.Video);
 app.use('/links', routes.Links);
 app.use('/info', routes.Info);
 app.use('/logs', routes.Logs);
+app.use('/code', routes.Code);
 
 
 //for umeditor
@@ -96,7 +113,9 @@ app.post('/upload/activity', uploadActivity.single('file'), (req, res)=> uploadI
 app.post('/upload/links', uploadLinks.single('file'), (req, res)=> uploadImgRes(req, res, 'links'));
 app.post('/upload/info', uploadInfo.single('file'), (req, res)=> uploadImgRes(req, res, 'info'));
 app.post('/upload/news', uploadNews.single('file'), (req, res)=> uploadImgRes(req, res, 'news'));
-app.post('/upload/video',uploadVideo.single('video'),(req,res)=>uploadVideoRes(req, res, '/video'));
+app.post('/upload/video', uploadVideo.single('video'), (req, res)=>uploadVideoRes(req, res, '/video'));
+//for 邀请码
+app.post('/upload/excel', uploadExcel.single('file'), (req, res)=>uploadVideoRes(req, res, '/server/upload'));
 
 app.use(express.static(path.resolve('client/dist/')));
 app.use(express.static(path.resolve('server/upload/')));

@@ -119,6 +119,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/video/edit/:video_id',
                 templateUrl: 'templates/video/videoEdit.html'
             })
+            .state('excelAdd', {
+                url: '/excel',
+                templateUrl: 'templates/excel/excelAdd.html'
+            })
             .state('opLogs', {
                 url: '/logs/op',
                 templateUrl: 'templates/logs/opLogsList.html'
